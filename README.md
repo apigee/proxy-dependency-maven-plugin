@@ -36,7 +36,7 @@ Following is a example of referencing a flow fragment.
                     &lt;Condition&gt;(verifyapikey.verify_apikey_clientid.client_secret != local_secret)&lt;/Condition&gt;
                     &lt;Name&gt;fault_invalid_secret&lt;/Name&gt;
                 &lt;/Step&gt;
-               **#spike_arrest_and_quota#**
+               __#spike_arrest_and_quota#__
                 &lt;Step&gt;
                     &lt;Name&gt;js_add_trusted_headers&lt;/Name&gt;
                 &lt;/Step&gt;
@@ -49,9 +49,7 @@ Following is a example of referencing a flow fragment.
     &lt;/Flows&gt;
 &lt;/TargetEndpoint&gt;
 </pre>
-
 When the dependency plugin is run on the proxy containing the above file, the reference will be replaced by the content of the flow fragment file. The output would be the following
-
 *Filename:  dummy_endpoint.xml*
 <pre>
 &lt;TargetEndpoint name=&quot;dummyEndPonint&quot;&gt;
@@ -65,12 +63,12 @@ When the dependency plugin is run on the proxy containing the above file, the re
                     &lt;Condition&gt;(verifyapikey.verify_apikey_clientid.client_secret != local_secret)&lt;/Condition&gt;
                     &lt;Name&gt;fault_invalid_secret&lt;/Name&gt;
                 &lt;/Step&gt;
-               **&lt;Step&gt;
-    &lt;Name&gt;spike_arrest_by_clientid&lt;/Name&gt;
-&lt;/Step&gt;
-&lt;Step&gt;
-    &lt;Name&gt;quota_rate_limit&lt;/Name&gt;
-&lt;/Step&gt;**
+               __&lt;Step&gt;
+    				&lt;Name&gt;spike_arrest_by_clientid&lt;/Name&gt;
+			&lt;/Step&gt;
+			&lt;Step&gt;
+    				&lt;Name&gt;quota_rate_limit&lt;/Name&gt;
+			&lt;/Step&gt;__
                 &lt;Step&gt;
                     &lt;Name&gt;js_add_trusted_headers&lt;/Name&gt;
                 &lt;/Step&gt;
@@ -86,32 +84,28 @@ When the dependency plugin is run on the proxy containing the above file, the re
 
 Usage
 ---------
-
 Following is an example usage of the plugin.
-
 <pre>
 &lt;plugin&gt;
-                &lt;groupId&gt;com.apigee.cs&lt;/groupId&gt;
-                &lt;artifactId&gt;proxy-dependency-maven-plugin&lt;/artifactId&gt;
-                &lt;version&gt;1.0&lt;/version&gt;
-                &lt;executions&gt;
-                    &lt;execution&gt;
-                        &lt;goals&gt;
-                            &lt;goal&gt;resolve&lt;/goal&gt;
-                        &lt;/goals&gt;
-                        &lt;configuration&gt;
-                            &lt;proxySrcDir&gt;.&lt;/proxySrcDir&gt;
-                            &lt;proxyDestDir&gt;./target&lt;/proxyDestDir&gt;
-                            &lt;proxyRefs&gt;
-                                &lt;proxyRef&gt;../CommonProxy&lt;/proxyRef&gt;
-                            &lt;/proxyRefs&gt;
-                        &lt;/configuration&gt;
-                    &lt;/execution&gt;
-                &lt;/executions&gt;
-            &lt;/plugin&gt;
+    &lt;groupId&gt;com.apigee.cs&lt;/groupId&gt;
+    &lt;artifactId&gt;proxy-dependency-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;goals&gt;
+                 &lt;goal&gt;resolve&lt;/goal&gt;
+             &lt;/goals&gt;
+             &lt;configuration&gt;
+                  &lt;proxySrcDir&gt;.&lt;/proxySrcDir&gt;
+                  &lt;proxyDestDir&gt;./target&lt;/proxyDestDir&gt;
+                  &lt;proxyRefs&gt;
+                      &lt;proxyRef&gt;../CommonProxy&lt;/proxyRef&gt;
+                  &lt;/proxyRefs&gt;
+             &lt;/configuration&gt;
+         &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;
 </pre>
-
-
 The parameters for the plugin are as follows
 
  * proxySrcDir (Default: .) <br/>
@@ -129,7 +123,6 @@ The parameters for the plugin are as follows
       Javascript resources files referenced by the proxy are resolved relative
       to the policy file found in the referenced proxies. The Javascript files
       must be present in the same proxy as the referencing policy file.
-
 
 Current State
 ------------------
