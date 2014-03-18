@@ -30,7 +30,7 @@ public class Policy {
         final File destDir = new File(rootDir.getPath() + "/apiproxy/policies");
         log.debug(String.format("Copying file %s to %s", policy.getAbsolutePath(), destDir.getAbsolutePath()));
         FileUtils.copyFileToDirectory(policy, destDir);
-        new JavaScriptResourceFileProcessor(policy).actOn(new File(rootDir.getPath() + "apiproxy/resources/jsc"), log);
+        new JavaScriptResourceFileProcessor(policy).actOn(new File(rootDir.getPath() + "/apiproxy/resources/jsc"), log);
     }
 
 

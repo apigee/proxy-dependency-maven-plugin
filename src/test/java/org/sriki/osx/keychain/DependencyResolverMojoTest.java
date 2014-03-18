@@ -57,6 +57,28 @@ public class DependencyResolverMojoTest {
         assertThat(new File(resDir, "common_oauth_request_flow_fault.flowfrag").exists(), is(true));
         assertThat(policiesDir.list().length, is(61));
         assertPolicies(policiesDir);
+        assertJSFiles(jsResDir);
+    }
+
+    private void assertJSFiles(File jsResDir) {
+        String[] expectedFiles = new String[]{"js_conv_age_to_dob.js", "js_prevent_req_path_copy.js",
+                "js_set_oauth_cred.js", "js_set_user_attrs.js", "js_add_trusted_headers.js", "js_check_accesstoken.js", "js_extract_userattr_38style.js",
+                "js_setkeyandauth.js", "js_setup_splunk_vars.js","crypto_js","moment_js"};
+        Arrays.sort(expectedFiles);
+        String[] actualFiles = jsResDir.list();
+        Arrays.sort(actualFiles);
+        assertThat(actualFiles, is(expectedFiles));
+        final String[] expectedCryptoFiles = {"core-min.js","enc-base64-min.js","sha512-min.js","x64-core-min.js",};
+        Arrays.sort(expectedCryptoFiles);
+        actualFiles = new File(jsResDir,"crypto_js").list();
+        Arrays.sort(actualFiles);
+        assertThat(actualFiles, is(expectedCryptoFiles));
+        final String[] expectedMomentFiles = {"moment.min.js"};
+        Arrays.sort(expectedMomentFiles);
+        actualFiles = new File(jsResDir,"moment_js").list();
+        Arrays.sort(actualFiles);
+        assertThat(actualFiles, is(expectedMomentFiles));
+
     }
 
     private void assertPolicies(File policiesDir) {
@@ -77,7 +99,7 @@ public class DependencyResolverMojoTest {
                 "js_setkeyandauth.xml", "oauthv2_gen_ext_accesstoken.xml", "oauthv2_token_get_attr.xml",
                 "js_setup_splunk_vars.xml", "log_splunk.xml", "quota_rate_limit.xml", "spike_arrest_by_clientid.xml", "keymap_get_auth_salt.xml",
                 "assign_alter_queryparams_headers.xml", "js_add_trusted_headers.xml", "assign_remove_x_forward_headers.xml",
-                "assign_init_variables.xml","fault_appId_not_found.xml"
+                "assign_init_variables.xml", "fault_appId_not_found.xml"
         };
         Arrays.sort(expectedPolicies);
         final String[] actualPolicies = policiesDir.list();
