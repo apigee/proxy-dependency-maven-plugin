@@ -64,11 +64,11 @@ When the dependency plugin is run on the proxy containing the above file, the re
                     &lt;Name&gt;fault_invalid_secret&lt;/Name&gt;
                 &lt;/Step&gt;
                 &lt;Step&gt;
-    			&lt;Name&gt;spike_arrest_by_clientid&lt;/Name&gt;
-		&lt;/Step&gt;
-		&lt;Step&gt;
-    			&lt;Name&gt;quota_rate_limit&lt;/Name&gt;
-		&lt;/Step&gt;
+    		       &lt;Name&gt;spike_arrest_by_clientid&lt;/Name&gt;
+                &lt;/Step&gt;
+                &lt;Step&gt;
+                        &lt;Name&gt;quota_rate_limit&lt;/Name&gt;
+                &lt;/Step&gt;
                 &lt;Step&gt;
                     &lt;Name&gt;js_add_trusted_headers&lt;/Name&gt;
                 &lt;/Step&gt;
