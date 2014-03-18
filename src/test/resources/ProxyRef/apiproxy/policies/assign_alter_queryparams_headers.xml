@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="assign_alter_queryparams_headers">
+    <Add>
+        <QueryParams>
+           <QueryParam name="login">{target_basicauth_username}</QueryParam>
+           <QueryParam name="password">{target_basicauth_password}</QueryParam>
+           <QueryParam name="action">login</QueryParam>
+        </QueryParams>
+    </Add>
+    <Remove>
+        <QueryParams>
+            <QueryParam name="access_token"/>
+        </QueryParams>
+    </Remove>
+    <Set>
+        <Headers>
+            <Header name="Authorization">{target_basicauth}</Header>
+            <Header name="Request-URI">{request.path}</Header>
+            <Header name="Cookie">userid={verifyapikey.verify_apikey_clientid.developer.id}; slCheck={oauthv2accesstoken.oauthv2_token_get_attr.accesstoken.slCheck}</Header>
+            <Header name="upmid">{oauthv2accesstoken.oauthv2_token_get_attr.accesstoken.upmid}</Header>
+            <Header name="plusid">{oauthv2accesstoken.oauthv2_token_get_attr.accesstoken.plusid}</Header>
+        </Headers>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

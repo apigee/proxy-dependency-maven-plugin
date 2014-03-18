@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.apache.maven.plugin.my.unit</groupId>
+    <artifactId>project-to-test</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <name>Test DependencyResolverMojo</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.apigee.cs</groupId>
+                <artifactId>proxy-dependency-maven-plugin</artifactId>
+                <version>1.0</version>
+                <configuration>
+                    <!--<proxySrcDir>.</proxySrcDir>-->
+                    <!--<proxyDestDir>target</proxyDestDir>-->
+                    <proxyRefs>
+                        <proxyRef>CommonProxy</proxyRef>
+                        <proxyRef>EmulatorOAuth</proxyRef>
+                    </proxyRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

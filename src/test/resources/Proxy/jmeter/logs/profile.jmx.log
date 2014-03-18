@@ -1,0 +1,102 @@
+2014/03/14 15:22:23 INFO  - jmeter.util.JMeterUtils: Setting Locale to en_US 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: Loading user properties from: /Users/Srikanth/wip/nike/SrikiNikeEdge/src/gateway/Profile/target/jmeter/bin/user.properties 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: Loading system properties from: /Users/Srikanth/wip/nike/SrikiNikeEdge/src/gateway/Profile/target/jmeter/bin/system.properties 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: Copyright (c) 1998-2013 The Apache Software Foundation 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: Version 2.9 r1437961 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: java.version=1.6.0_65 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: os.name=Mac OS X 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: os.arch=x86_64 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: os.version=10.9.1 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: file.encoding=MacRoman 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: Default Locale=English (United States) 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: JMeter  Locale=English (United States) 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: JMeterHome=/Users/Srikanth/wip/nike/SrikiNikeEdge/src/gateway/Profile/target/jmeter 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: user.dir  =/Users/Srikanth/wip/nike/SrikiNikeEdge/src/gateway/Profile/target/jmeter/bin 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: PWD       =/Users/Srikanth/wip/nike/SrikiNikeEdge/src/gateway/Profile/target/jmeter/bin 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: IP: 172.16.1.130 Name: sriki-desktop FullName: 172.16.1.130 
+2014/03/14 15:22:23 INFO  - jmeter.services.FileServer: Default base='/Users/Srikanth/wip/nike/SrikiNikeEdge/src/gateway/Profile/target/jmeter/bin' 
+2014/03/14 15:22:23 INFO  - jmeter.services.FileServer: Set new base='/Users/Srikanth/wip/nike/SrikiNikeEdge/src/gateway/Profile/test' 
+2014/03/14 15:22:23 INFO  - jmeter.JMeter: Loading file: /Users/Srikanth/wip/nike/SrikiNikeEdge/src/gateway/Profile/test/profile.jmx 
+2014/03/14 15:22:23 INFO  - jmeter.save.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2 
+2014/03/14 15:22:23 INFO  - jmeter.save.SaveService: Using SaveService properties file encoding UTF-8 
+2014/03/14 15:22:23 INFO  - jmeter.save.SaveService: Using SaveService properties file version 1427507 
+2014/03/14 15:22:23 INFO  - jmeter.save.SaveService: Using SaveService properties version 2.4 
+2014/03/14 15:22:23 INFO  - jmeter.save.SaveService: All converter versions present and correct 
+2014/03/14 15:22:23 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Cannot find .className property for htmlParser, using default 
+2014/03/14 15:22:23 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for text/html is  
+2014/03/14 15:22:23 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for application/xhtml+xml is  
+2014/03/14 15:22:23 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for application/xml is  
+2014/03/14 15:22:23 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for text/xml is  
+2014/03/14 15:22:23 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser 
+2014/03/14 15:22:23 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Reuse SSL session context on subsequent iterations: true 
+2014/03/14 15:22:23 INFO  - jmeter.util.BSFTestElement: Registering JMeter version of JavaScript engine as work-round for BSF-22 
+2014/03/14 15:22:23 INFO  - jmeter.engine.StandardJMeterEngine: Listeners will be started after enabling running version 
+2014/03/14 15:22:23 INFO  - jmeter.engine.StandardJMeterEngine: To revert to the earlier behaviour, define jmeterengine.startlistenerslater=false 
+2014/03/14 15:22:23 INFO  - jmeter.engine.StandardJMeterEngine: Running the test! 
+2014/03/14 15:22:23 INFO  - jmeter.engine.util.CompoundVariable: Note: Function class names must contain the string: '.functions.' 
+2014/03/14 15:22:23 INFO  - jmeter.engine.util.CompoundVariable: Note: Function class names must not contain the string: '.gui.' 
+2014/03/14 15:22:24 INFO  - jmeter.JMeter: Running test (1394790744123) 
+2014/03/14 15:22:24 INFO  - jmeter.engine.StandardJMeterEngine: Starting ThreadGroup: 1 : Register V2 Access Token 
+2014/03/14 15:22:24 INFO  - jmeter.engine.StandardJMeterEngine: Starting 1 threads for group Register V2 Access Token. 
+2014/03/14 15:22:24 INFO  - jmeter.engine.StandardJMeterEngine: Thread will continue on error 
+2014/03/14 15:22:24 INFO  - jmeter.threads.ThreadGroup: Starting thread group number 1 threads 1 ramp-up 1 perThread 1000.0 delayedStart=false 
+2014/03/14 15:22:24 INFO  - jmeter.threads.JMeterThread: jmeterthread.startearlier=true (see jmeter.properties) 
+2014/03/14 15:22:24 INFO  - jmeter.threads.JMeterThread: Running PostProcessors in forward order 
+2014/03/14 15:22:24 INFO  - jmeter.threads.ThreadGroup: Started thread group number 1 
+2014/03/14 15:22:24 INFO  - jmeter.engine.StandardJMeterEngine: Waiting for thread group: Register V2 Access Token to finish before starting next group 
+2014/03/14 15:22:24 INFO  - jmeter.threads.JMeterThread: Thread started: Register V2 Access Token 1-1 
+2014/03/14 15:22:24 INFO  - jmeter.samplers.SampleResult: Note: Sample TimeStamps are START times 
+2014/03/14 15:22:24 INFO  - jmeter.samplers.SampleResult: sampleresult.default.encoding is set to ISO-8859-1 
+2014/03/14 15:22:24 INFO  - jmeter.samplers.SampleResult: sampleresult.useNanoTime=true 
+2014/03/14 15:22:24 INFO  - jmeter.samplers.SampleResult: sampleresult.nanoThreadSleep=5000 
+2014/03/14 15:22:24 INFO  - jmeter.protocol.http.sampler.HTTPJavaImpl: Maximum connection retries = 10 
+2014/03/14 15:22:24 INFO  - jmeter.util.JsseSSLManager: Using default SSL protocol: TLS 
+2014/03/14 15:22:24 INFO  - jmeter.util.JsseSSLManager: SSL session context: per-thread 
+2014/03/14 15:22:24 INFO  - jmeter.util.SSLManager: JmeterKeyStore Location:  type JKS 
+2014/03/14 15:22:24 INFO  - jmeter.util.SSLManager: KeyStore created OK 
+2014/03/14 15:22:24 WARN  - jmeter.util.SSLManager: Keystore file not found, loading empty keystore 
+2014/03/14 15:22:39 ERROR - jmeter.protocol.http.sampler.HTTPJavaImpl: readResponse: java.io.IOException: Server returned HTTP response code: 500 for URL: https://nikedev-ecn7.apigee.net/v2.0/oauth2/register?client_id=09e6c6a1202de70ee5141be6a5eab3a7&client_secret=0302b8f769b7f219 
+2014/03/14 15:22:39 ERROR - jmeter.protocol.http.sampler.HTTPJavaImpl: Cause: java.io.IOException: Server returned HTTP response code: 500 for URL: https://nikedev-ecn7.apigee.net/v2.0/oauth2/register?client_id=09e6c6a1202de70ee5141be6a5eab3a7&client_secret=0302b8f769b7f219 
+2014/03/14 15:22:39 INFO  - jmeter.protocol.http.sampler.HTTPJavaImpl: Error Response Code: 500 
+2014/03/14 15:22:40 INFO  - jmeter.threads.JMeterThread: Thread finished: Register V2 Access Token 1-1 
+2014/03/14 15:22:40 INFO  - jmeter.engine.StandardJMeterEngine: Starting ThreadGroup: 2 : Oauth2 Register 
+2014/03/14 15:22:40 INFO  - jmeter.engine.StandardJMeterEngine: Starting 1 threads for group Oauth2 Register. 
+2014/03/14 15:22:40 INFO  - jmeter.engine.StandardJMeterEngine: Thread will continue on error 
+2014/03/14 15:22:40 INFO  - jmeter.threads.ThreadGroup: Starting thread group number 2 threads 1 ramp-up 1 perThread 1000.0 delayedStart=false 
+2014/03/14 15:22:40 INFO  - jmeter.threads.ThreadGroup: Started thread group number 2 
+2014/03/14 15:22:40 INFO  - jmeter.engine.StandardJMeterEngine: Waiting for thread group: Oauth2 Register to finish before starting next group 
+2014/03/14 15:22:40 INFO  - jmeter.threads.JMeterThread: Thread started: Oauth2 Register 2-1 
+2014/03/14 15:22:47 ERROR - jmeter.protocol.http.sampler.HTTPJavaImpl: readResponse: java.io.IOException: Server returned HTTP response code: 500 for URL: https://nikedev-ecn7.apigee.net/oauth2/register?client_id=09e6c6a1202de70ee5141be6a5eab3a7&client_secret=0302b8f769b7f219 
+2014/03/14 15:22:47 ERROR - jmeter.protocol.http.sampler.HTTPJavaImpl: Cause: java.io.IOException: Server returned HTTP response code: 500 for URL: https://nikedev-ecn7.apigee.net/oauth2/register?client_id=09e6c6a1202de70ee5141be6a5eab3a7&client_secret=0302b8f769b7f219 
+2014/03/14 15:22:47 INFO  - jmeter.protocol.http.sampler.HTTPJavaImpl: Error Response Code: 500 
+2014/03/14 15:22:48 INFO  - jmeter.threads.JMeterThread: Thread finished: Oauth2 Register 2-1 
+2014/03/14 15:22:48 INFO  - jmeter.engine.StandardJMeterEngine: Starting ThreadGroup: 3 : NSL V2 Login 
+2014/03/14 15:22:48 INFO  - jmeter.engine.StandardJMeterEngine: Starting 1 threads for group NSL V2 Login. 
+2014/03/14 15:22:48 INFO  - jmeter.engine.StandardJMeterEngine: Thread will continue on error 
+2014/03/14 15:22:48 INFO  - jmeter.threads.ThreadGroup: Starting thread group number 3 threads 1 ramp-up 1 perThread 1000.0 delayedStart=false 
+2014/03/14 15:22:48 INFO  - jmeter.threads.ThreadGroup: Started thread group number 3 
+2014/03/14 15:22:48 INFO  - jmeter.engine.StandardJMeterEngine: Waiting for thread group: NSL V2 Login to finish before starting next group 
+2014/03/14 15:22:48 INFO  - jmeter.threads.JMeterThread: Thread started: NSL V2 Login 3-1 
+2014/03/14 15:22:55 INFO  - jmeter.protocol.http.sampler.HTTPHCAbstractImpl: Local host = sriki-desktop 
+2014/03/14 15:22:55 INFO  - jmeter.protocol.http.sampler.HTTPHC4Impl: HTTP request retry count = 1 
+2014/03/14 15:22:55 INFO  - jmeter.protocol.http.sampler.HTTPHC4Impl: Setting up HTTPS TrustAll scheme 
+2014/03/14 15:23:01 ERROR - jmeter.protocol.http.sampler.HTTPJavaImpl: readResponse: java.io.IOException: Server returned HTTP response code: 400 for URL: https://nikedev-ecn7.apigee.net/nsl/v2.0/user/login?app=ESP_Basketball&format=json&client_id=09e6c6a1202de70ee5141be6a5eab3a7&client_secret=0302b8f769b7f219&grant_type=password 
+2014/03/14 15:23:01 ERROR - jmeter.protocol.http.sampler.HTTPJavaImpl: Cause: java.io.IOException: Server returned HTTP response code: 400 for URL: https://nikedev-ecn7.apigee.net/nsl/v2.0/user/login?app=ESP_Basketball&format=json&client_id=09e6c6a1202de70ee5141be6a5eab3a7&client_secret=0302b8f769b7f219&grant_type=password 
+2014/03/14 15:23:01 INFO  - jmeter.protocol.http.sampler.HTTPJavaImpl: Error Response Code: 400 
+2014/03/14 15:23:02 ERROR - jmeter.protocol.http.sampler.HTTPJavaImpl: readResponse: java.io.IOException: Server returned HTTP response code: 400 for URL: https://nikedev-ecn7.apigee.net/nsl/v2.0/user/login?app=ESP_Basketball&format=json&client_id=09e6c6a1202de70ee5141be6a5eab3a7&client_secret=0302b8f769b7f219&grant_type=password 
+2014/03/14 15:23:02 ERROR - jmeter.protocol.http.sampler.HTTPJavaImpl: Cause: java.io.IOException: Server returned HTTP response code: 400 for URL: https://nikedev-ecn7.apigee.net/nsl/v2.0/user/login?app=ESP_Basketball&format=json&client_id=09e6c6a1202de70ee5141be6a5eab3a7&client_secret=0302b8f769b7f219&grant_type=password 
+2014/03/14 15:23:02 INFO  - jmeter.protocol.http.sampler.HTTPJavaImpl: Error Response Code: 400 
+2014/03/14 15:23:02 INFO  - jmeter.threads.JMeterThread: Thread finished: NSL V2 Login 3-1 
+2014/03/14 15:23:02 INFO  - jmeter.engine.StandardJMeterEngine: Starting ThreadGroup: 4 : Associate Device 
+2014/03/14 15:23:02 INFO  - jmeter.engine.StandardJMeterEngine: Starting 1 threads for group Associate Device. 
+2014/03/14 15:23:02 INFO  - jmeter.engine.StandardJMeterEngine: Thread will continue on error 
+2014/03/14 15:23:02 INFO  - jmeter.threads.ThreadGroup: Starting thread group number 4 threads 1 ramp-up 1 perThread 1000.0 delayedStart=false 
+2014/03/14 15:23:02 INFO  - jmeter.threads.ThreadGroup: Started thread group number 4 
+2014/03/14 15:23:02 INFO  - jmeter.engine.StandardJMeterEngine: All thread groups have been started 
+2014/03/14 15:23:02 INFO  - jmeter.threads.JMeterThread: Thread started: Associate Device 4-1 
+2014/03/14 15:23:12 ERROR - jmeter.protocol.http.sampler.HTTPJavaImpl: readResponse: java.io.IOException: Server returned HTTP response code: 500 for URL: https://nikedev-ecn7.apigee.net/map/getAccessToken?client_id=09e6c6a1202de70ee5141be6a5eab3a7&client_secret=0302b8f769b7f219&din=dummy 
+2014/03/14 15:23:12 ERROR - jmeter.protocol.http.sampler.HTTPJavaImpl: Cause: java.io.IOException: Server returned HTTP response code: 500 for URL: https://nikedev-ecn7.apigee.net/map/getAccessToken?client_id=09e6c6a1202de70ee5141be6a5eab3a7&client_secret=0302b8f769b7f219&din=dummy 
+2014/03/14 15:23:12 INFO  - jmeter.protocol.http.sampler.HTTPJavaImpl: Error Response Code: 500 
+2014/03/14 15:23:12 INFO  - jmeter.threads.JMeterThread: Thread finished: Associate Device 4-1 
+2014/03/14 15:23:12 INFO  - jmeter.engine.StandardJMeterEngine: Notifying test listeners of end of test 

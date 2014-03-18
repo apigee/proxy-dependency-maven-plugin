@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="oauth_client">
+    <HTTPTargetConnection>
+        <Properties/>
+        <LoadBalancer>
+            <Algorithm>RoundRobin</Algorithm>
+            <RetryEnabled>true</RetryEnabled>
+            <MaxFailures>10</MaxFailures>
+            <Server name="Sport_Target">
+                <IsEnabled>true</IsEnabled>
+            </Server>
+        </LoadBalancer>
+        <Path>/profile/v1.0/oauth</Path>
+        <HealthMonitor>
+            <IsEnabled>true</IsEnabled>
+            <IntervalInSec>5</IntervalInSec>
+            <TCPMonitor>
+                <ConnectTimeoutInSec>10</ConnectTimeoutInSec>
+                <Port>443</Port>
+            </TCPMonitor>
+        </HealthMonitor>
+    </HTTPTargetConnection>
+    <PreFlow name="PreFlow">
+        <Request>
+           #common_target_request_flow_steps#
+        </Request>
+        <Response/>
+    </PreFlow>
+</TargetEndpoint>

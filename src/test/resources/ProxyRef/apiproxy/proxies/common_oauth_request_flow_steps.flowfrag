@@ -1,0 +1,50 @@
+<Step>
+    <Name>extract_access_token</Name>
+</Step>
+<Step>
+    <Name>oauthv2_verify_accesstoken</Name>
+</Step>
+<Step>
+    <Name>js_check_accesstoken</Name>
+</Step>
+<Step>
+    <Condition>(accesstoken_valid = false)</Condition>
+    <Name>keymap_get_kmscredentials</Name>
+</Step>
+<Step>
+    <Condition>(accesstoken_valid = false)</Condition>
+    <Name>assign_set_kms_auth</Name>
+</Step>
+<Step>
+    <Condition>(accesstoken_valid = false)</Condition>
+    <Name>service_callout_kms</Name>
+</Step>
+<Step>
+    <Condition>(accesstoken_valid = false)</Condition>
+    <Name>extract_kms_token</Name>
+</Step>
+<Step>
+    <Condition>(accesstoken_valid = false)</Condition>
+    <Name>js_extract_userattr_38style</Name>
+</Step>
+<Step>
+    <Name>assign_set_local_client_id</Name>
+</Step>
+<Step>
+    <Name>verify_apikey_clientid</Name>
+</Step>
+<Step>
+    <Condition>(accesstoken_valid = false)</Condition>
+    <Name>assign_4g_client_secret</Name>
+</Step>
+<Step>
+    <Condition>(accesstoken_valid = false)</Condition>
+    <Name>js_setkeyandauth</Name>
+</Step>
+<Step>
+    <Condition>(accesstoken_valid = false)</Condition>
+    <Name>oauthv2_gen_ext_accesstoken</Name>
+</Step>
+<Step>
+    <Name>oauthv2_token_get_attr</Name>
+</Step>

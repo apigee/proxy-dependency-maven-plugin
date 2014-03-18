@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="nsl_user_login">
+    <Flows>
+        <Flow name="nsl_user_login">
+            <Request>
+                <Step>
+                    <Name>assign_handle_cookies_accept</Name>
+                </Step>
+                <Step>
+                    <Condition>!(local_accept := "application/json")</Condition>
+                    <Name>fault_accept_json_not_found</Name>
+                </Step>
+                <Step>
+                    <Name>assign_set_user_login_target</Name>
+                </Step>
+                <Step>
+                    <Name>assign_set_profile_v1_version</Name>
+                </Step>
+            </Request>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/nsl/user/login</BasePath>
+        <VirtualHost>https_vhost</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="login">
+        <TargetEndpoint>register_or_login</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

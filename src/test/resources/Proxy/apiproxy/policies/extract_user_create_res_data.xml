@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables enabled="true" continueOnError="false" async="false" name="extract_user_create_res_data">
+    <Source clearPayload="false">response</Source>
+    <JSONPayload>
+        <Variable name="success">
+            <JSONPath>$.serviceResponse.header.success</JSONPath>
+        </Variable>
+        <Variable name="upmid">
+            <JSONPath>$.serviceResponse.body.User.id</JSONPath>
+        </Variable>
+        <Variable name="userObj">
+            <JSONPath>$.serviceResponse.body.User</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <XMLPayload>
+        <Variable name="success">
+            <XPath>/serviceResponse/header/success</XPath>
+        </Variable>
+        <Variable name="upmid">
+            <XPath>/serviceResponse/body/User/id</XPath>
+        </Variable>
+        <Variable name="userObj" type="nodeset">
+            <XPath>/serviceResponse/body/User</XPath>
+        </Variable>
+    </XMLPayload>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>
+

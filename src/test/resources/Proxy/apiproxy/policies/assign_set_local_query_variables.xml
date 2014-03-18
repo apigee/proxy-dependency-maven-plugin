@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="assign_set_local_query_variables">
+    <AssignVariable>
+        <Name>EMPTY</Name>
+        <Value/>
+    </AssignVariable>
+    <!-- Query Params-->
+    <AssignVariable>
+        <Name>local_clientid</Name>
+        <Ref>request.queryparam.client_id</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_secret</Name>
+        <Ref>request.queryparam.client_secret</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_granttype</Name>
+        <Ref>request.queryparam.grant_type</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_pin</Name>
+        <Ref>request.queryparam.onetimetoken</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_onetimetoken</Name>
+        <Ref>request.queryparam.onetimetoken</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_format</Name>
+        <Ref>request.queryparam.format</Ref>
+        <Value>json</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_din</Name>
+        <Ref>request.queryparam.din</Ref>
+    </AssignVariable>
+
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables enabled="true" continueOnError="false" async="false" name="extract_user_check_assoc_device_data">
+    <Source clearPayload="false">response</Source>
+    <Header name="din">
+        <Pattern ignoreCase="true">{din}</Pattern>
+    </Header>
+    <Header name="userDeviceId">
+        <Pattern ignoreCase="true">{devicetoken}</Pattern>
+    </Header>
+    <Header name="Set-Cookie">
+        <Pattern ignoreCase="true">PLUSCOOKIE={nikePlusCookie};*</Pattern>
+    </Header>
+    <JSONPayload>
+        <Variable name="plusid">
+            <JSONPath>$.plusId</JSONPath>
+        </Variable>
+        <Variable name="userpin">
+            <JSONPath>$.userPin</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>
+

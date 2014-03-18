@@ -1,0 +1,20 @@
+<Step>
+    <Name>assign_init_variables</Name>
+</Step>
+<Step>
+    <Condition>(request.header.appid=null) or (request.header.appid=EMPTY)</Condition>
+    <Name>fault_appId_not_found</Name>
+</Step>
+<Step>
+    <Name>keymap_get_auth_salt</Name>
+</Step>
+<Step>
+    <Name>assign_alter_queryparams_headers</Name>
+</Step>
+<Step>
+    <Condition>(upmid !=null) and (upmid != EMPTY) </Condition>
+    <Name>js_add_trusted_headers</Name>
+</Step>
+<Step>
+    <Name>assign_remove_x_forward_headers</Name>
+</Step>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="assign_set_kms_auth">
+    <DisplayName>assign_set_kms_auth</DisplayName>
+    <AssignTo createNew="true" type="request">kms_request</AssignTo>
+    <Add>
+        <Headers>
+            <Header name="Authorization">{basic_auth_kms}</Header>
+        </Headers>
+    </Add>
+</AssignMessage>

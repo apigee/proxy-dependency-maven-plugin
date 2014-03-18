@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="OAuth_client">
+    <FaultRules>
+      <FaultRule name="invalid_client_id">
+        <Step>
+          <Condition>oauthV2.failed = true</Condition>
+          <Name>fault_invalid_secret</Name>
+          </Step>
+      </FaultRule>
+    </FaultRules>
+    <Flows>
+        <Flow name="prereg">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>assign_set_variables</Name>
+                </Step>
+                <Step>
+                    <Name>verify_apikey_clientid</Name>
+                </Step>
+                #common_spike_arrest_flow#
+            </Request>
+            <Response/>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/v1.0/oauth/prereg</BasePath>
+        <VirtualHost>https_vhost</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="oauth_client">
+        <TargetEndpoint>oauth_client</TargetEndpoint>
+    </RouteRule>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>#common_logging_post_flow_steps#</Response>
+    </PostFlow>
+</ProxyEndpoint>

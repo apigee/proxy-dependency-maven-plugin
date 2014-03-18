@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="assign_handle_cookies_accept">
+    <Remove>
+        <Headers>
+            <Header name="Cookie"></Header>
+            <Header name="Set-Cookie"></Header>
+            <Header name="cookie"></Header>
+        </Headers>
+    </Remove>
+    <AssignVariable>
+        <Name>local_accept</Name>
+        <Ref>request.header.Accept</Ref>
+    </AssignVariable>
+</AssignMessage>

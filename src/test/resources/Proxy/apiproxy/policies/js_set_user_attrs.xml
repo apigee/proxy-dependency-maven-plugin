@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript timeLimit="0" enabled="true" continueOnError="true" async="false" name="js_set_user_attrs">
+    <ResourceURL>jsc://js_set_user_attrs.js</ResourceURL>
+</Javascript>

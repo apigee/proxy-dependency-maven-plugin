@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables enabled="true" continueOnError="false" async="false" name="extract_dob_age">
+    <Source clearPayload="false">local_userjson</Source>
+    <JSONPayload>
+        <Variable name="local_age">
+            <JSONPath>$.User.age</JSONPath>
+        </Variable>
+        <Variable name="local_dobDay">
+            <JSONPath>$.User.dobDay</JSONPath>
+        </Variable>
+        <Variable name="local_dobMonth">
+            <JSONPath>$.User.dobMonth</JSONPath>
+        </Variable>
+        <Variable name="local_dobYear">
+            <JSONPath>$.User.dobYear</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>
+

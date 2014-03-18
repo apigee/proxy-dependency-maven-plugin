@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="assign_transform_usercheck_request">
+    <Set>
+        <Headers>
+            <Header name="upmid">{upmid}</Header>
+            <Header name="Accept">application/json</Header>
+            <Header name="Authorization">{request.header.Authorization}</Header>
+            <Header name="X-NIKE-TS">{request.header.X-NIKE-TS}</Header>
+            <Header name="X-NIKE-SID">{request.header.X-NIKE-SID}</Header>
+            <Header name="X-NIKE-TOKEN">{request.header.X-NIKE-TOKEN}</Header>
+            <Header name="Host">{request.header.Host}</Header>
+            <Header name="Content-Type">application/x-www-form-urlencoded</Header>
+        </Headers>
+        <Verb>POST</Verb>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="true" transport="http" type="request">user_check_request</AssignTo>
+</AssignMessage>

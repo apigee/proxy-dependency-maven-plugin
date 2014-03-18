@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<sample t="1" lt="0" ts="1394790744310" s="true" lb="***********Beginning Register V2*************" rc="200" rm="OK" tn="Register V2 Access Token 1-1" dt="text" by="2235"/>
+<httpSample t="4767" lt="4767" ts="1394790744329" s="true" lb="NSL_CreateUser_38" rc="200" rm="OK" tn="Register V2 Access Token 1-1" dt="text" by="2740">
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="5762" lt="5762" ts="1394790749104" s="true" lb="Create User With String Age" rc="200" rm="OK" tn="Register V2 Access Token 1-1" dt="text" by="1552">
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1611" lt="1611" ts="1394790754869" s="true" lb="Create User With Integer Age" rc="200" rm="OK" tn="Register V2 Access Token 1-1" dt="text" by="1552">
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1386" lt="1386" ts="1394790756482" s="true" lb="Create User With Age but no dob" rc="200" rm="OK" tn="Register V2 Access Token 1-1" dt="text" by="1550">
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1247" lt="1247" ts="1394790757870" s="true" lb="NSL_CreateUser_4G" rc="500" rm="Failed To Create User" tn="Register V2 Access Token 1-1" dt="text" by="480">
+  <assertionResult>
+    <name>Response Code is 500</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>Response Error Message</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1467" lt="1466" ts="1394790759119" s="true" lb="Create User With XML Payload" rc="200" rm="OK" tn="Register V2 Access Token 1-1" dt="text" by="1288">
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<sample t="1" lt="0" ts="1394790760837" s="true" lb="***********Beginning /Oauth2/Register*************" rc="200" rm="OK" tn="Oauth2 Register 2-1" dt="text" by="2236"/>
+<httpSample t="1832" lt="1832" ts="1394790760840" s="true" lb="Create User With String Age" rc="200" rm="OK" tn="Oauth2 Register 2-1" dt="text" by="1552">
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1459" lt="1458" ts="1394790762674" s="true" lb="Create User With Integer Age" rc="200" rm="OK" tn="Oauth2 Register 2-1" dt="text" by="1550">
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1668" lt="1668" ts="1394790764134" s="true" lb="Create User With Age but no dob" rc="200" rm="OK" tn="Oauth2 Register 2-1" dt="text" by="1550">
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1219" lt="1219" ts="1394790765804" s="true" lb="NSL_CreateUser_4G" rc="500" rm="Failed To Create User" tn="Oauth2 Register 2-1" dt="text" by="479">
+  <assertionResult>
+    <name>Response Code is 500</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>Response Error Message</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1567" lt="1567" ts="1394790767025" s="true" lb="Create User With XML Payload" rc="200" rm="OK" tn="Oauth2 Register 2-1" dt="text" by="1288">
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<sample t="1" lt="0" ts="1394790768615" s="true" lb="***********NSL  Register Login*************" rc="200" rm="OK" tn="NSL V2 Login 3-1" dt="text" by="2236"/>
+<httpSample t="1989" lt="1988" ts="1394790768617" s="true" lb="NSL_CreateUser_38" rc="200" rm="OK" tn="NSL V2 Login 3-1" dt="text" by="2744">
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1933" lt="1933" ts="1394790770608" s="true" lb="Login_3.8_User_4G_NSL" rc="200" rm="OK" tn="NSL V2 Login 3-1" dt="text" by="1501">
+  <assertionResult>
+    <name>access_token</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>Json Validation Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1037" lt="1037" ts="1394790773303" s="true" lb="Login_3.8_User_4G_V2" rc="200" rm="OK" tn="NSL V2 Login 3-1" dt="text" by="1501">
+  <assertionResult>
+    <name>access_token</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>Json Validation Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1363" lt="1363" ts="1394790774360" s="true" lb="NSL_CreateUser_4G" rc="200" rm="OK" tn="NSL V2 Login 3-1" dt="text" by="1557">
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="2405" lt="2405" ts="1394790775793" s="true" lb="Attributes Check" rc="200" rm="OK" tn="NSL V2 Login 3-1" dt="text" by="2148">
+  <assertionResult>
+    <name>Check Refresh Token &amp; Access Token Times</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <assertionResult>
+    <name>Custom Attribute Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1244" lt="1244" ts="1394790778225" s="true" lb="Login_4G_User_4G" rc="200" rm="OK" tn="NSL V2 Login 3-1" dt="text" by="1504">
+  <assertionResult>
+    <name>access_token</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>Json Validation Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1191" lt="1191" ts="1394790779489" s="true" lb="Login_4G_User_4G_NSL" rc="200" rm="OK" tn="NSL V2 Login 3-1" dt="text" by="1504">
+  <assertionResult>
+    <name>access_token</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>Json Validation Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>upmId Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1049" lt="1049" ts="1394790780699" s="true" lb="Login_User_Without_AcceptHeader" rc="400" rm="Bad Request" tn="NSL V2 Login 3-1" dt="text" by="296">
+  <assertionResult>
+    <name>Should Be 400</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="277" lt="277" ts="1394790781749" s="true" lb="Login_User_With_Wrong_AcceptHeader" rc="400" rm="Bad Request" tn="NSL V2 Login 3-1" dt="text" by="296">
+  <assertionResult>
+    <name>Should Be 400</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="300" lt="300" ts="1394790782027" s="true" lb="Login_Refresh_User_4G" rc="200" rm="OK" tn="NSL V2 Login 3-1" dt="text" by="729">
+  <assertionResult>
+    <name>access_token</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>token Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<sample t="0" lt="0" ts="1394790782352" s="true" lb="***********Begin Associate Device*************" rc="200" rm="OK" tn="Associate Device 4-1" dt="text" by="2236"/>
+<httpSample t="788" lt="788" ts="1394790782353" s="true" lb="v1.0_me_device - imprint - POST" rc="200" rm="OK" tn="Associate Device 4-1" dt="text" by="312">
+  <assertionResult>
+    <name>&quot;userDeviceId&quot;:&quot;0502509c-39a2-477e-9ea8-2d948f3c6b03&quot; Response Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>&quot;din&quot;:&quot;${din}&quot; Response Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>Json Validation Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1607" lt="1607" ts="1394790783161" s="true" lb="v1.0_me_device - onetimetoken - GET" rc="200" rm="OK" tn="Associate Device 4-1" dt="text" by="266">
+  <assertionResult>
+    <name>onetimetoken Response Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>Json Validation Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1446" lt="1446" ts="1394790784782" s="true" lb="oauth2_v1.0_associatedevice" rc="200" rm="OK" tn="Associate Device 4-1" dt="text" by="706">
+  <assertionResult>
+    <name>Json Validation Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1409" lt="1409" ts="1394790786248" s="true" lb="Attributes Check" rc="200" rm="OK" tn="Associate Device 4-1" dt="text" by="2220">
+  <assertionResult>
+    <name>Check Refresh Token &amp; Access Token Times</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <assertionResult>
+    <name>Custom Attribute Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="449" lt="449" ts="1394790787681" s="true" lb="KVMap Check" rc="200" rm="OK" tn="Associate Device 4-1" dt="text" by="3223">
+  <assertionResult>
+    <name>Token Attribute Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1457" lt="1457" ts="1394790788132" s="true" lb="oauth2_v2.0_associatedevice" rc="200" rm="OK" tn="Associate Device 4-1" dt="text" by="706">
+  <assertionResult>
+    <name>Json Validation Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="425" lt="425" ts="1394790789603" s="true" lb="Attributes Check" rc="200" rm="OK" tn="Associate Device 4-1" dt="text" by="2220">
+  <assertionResult>
+    <name>Check Refresh Token &amp; Access Token Times</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <assertionResult>
+    <name>Custom Attribute Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="413" lt="413" ts="1394790790047" s="true" lb="KVMap Check" rc="200" rm="OK" tn="Associate Device 4-1" dt="text" by="3223">
+  <assertionResult>
+    <name>Token Attribute Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1236" lt="1236" ts="1394790790468" s="true" lb="map_getAccessToken" rc="200" rm="OK" tn="Associate Device 4-1" dt="text" by="725">
+  <assertionResult>
+    <name>access_token Response Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1250" lt="1250" ts="1394790791706" s="true" lb="map_getAccessToken_Invalid" rc="500" rm="Internal Server Error" tn="Associate Device 4-1" dt="text" by="249">
+  <assertionResult>
+    <name>should be 500</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>should contain error messaged</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+
+</testResults>

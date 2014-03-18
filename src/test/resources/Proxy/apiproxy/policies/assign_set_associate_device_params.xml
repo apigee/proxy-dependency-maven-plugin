@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="assign_set_associate_device_params">
+    <AssignVariable>
+        <Name>EMPTY</Name>
+        <Value/>
+    </AssignVariable>
+
+    <!-- Headers-->
+    <AssignVariable>
+        <Name>local_host</Name>
+        <Ref>request.header.host</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_appId</Name>
+        <Ref>request.header.appid</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>upmid</Name>
+        <Ref>request.header.upmid</Ref>
+    </AssignVariable>
+
+    <!-- Modify Headers-->
+    <Set>
+        <Headers>
+            <Header name="Accept">application/json</Header>
+            <Header name="Authorization">{target_basicauth}</Header>
+        </Headers>
+    </Set>
+
+    <!-- Query Params-->
+    <AssignVariable>
+        <Name>local_clientid</Name>
+        <Ref>request.queryparam.client_id</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_secret</Name>
+        <Ref>request.queryparam.client_secret</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_granttype</Name>
+        <Ref>request.queryparam.grant_type</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_pin</Name>
+        <Ref>request.queryparam.onetimetoken</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_onetimetoken</Name>
+        <Ref>request.queryparam.onetimetoken</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_format</Name>
+        <Ref>request.queryparam.format</Ref>
+        <Value>json</Value>
+    </AssignVariable>
+
+    <!-- Form Params-->
+    <AssignVariable>
+        <Name>local_onetimetoken</Name>
+        <Ref>request.formparam.onetimetoken</Ref>
+    </AssignVariable>
+
+
+
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="assign_set_variables">
+    <DisplayName>assign_set_variables</DisplayName>
+    <AssignVariable>
+        <Name>local_host</Name>
+        <Ref>request.header.host</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_clientid</Name>
+      <Ref>request.header.client_id</Ref>
+    </AssignVariable>
+  <AssignVariable>
+        <Name>local_clientid</Name>
+        <Ref>request.queryparam.client_id</Ref>
+    </AssignVariable>
+  <AssignVariable>
+        <Name>local_clientid</Name>
+        <Ref>request.formparam.client_id</Ref>
+    </AssignVariable>
+  <AssignVariable>
+        <Name>local_secret</Name>
+        <Value/>
+       <Ref>request.header.client_secret</Ref>
+    </AssignVariable>
+  <AssignVariable>
+        <Name>local_secret</Name>
+        <Ref>request.queryparam.client_secret</Ref>
+    </AssignVariable>
+  <AssignVariable>
+        <Name>local_secret</Name>
+        <Ref>request.formparam.client_secret</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

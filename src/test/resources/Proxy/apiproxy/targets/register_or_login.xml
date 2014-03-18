@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TargetEndpoint name="register_or_login">
+    <Flows>
+        <Flow name="register_or_login">
+            <Request>
+                <Step>
+                    <Name>assign_set_local_header_variables</Name>
+                </Step>
+                <Step>
+                    <Name>assign_set_local_query_variables</Name>
+                </Step>
+                <Step>
+                    <Name>assign_set_local_form_variables</Name>
+                </Step>
+                <Step>
+                    <Name>verify_apikey_clientid</Name>
+                </Step>
+                <Step>
+                    <Condition>(verifyapikey.verify_apikey_clientid.client_secret != local_secret)</Condition>
+                    <Name>fault_invalid_secret</Name>
+                </Step>
+                #spike_arrest_and_quota#
+                <Step>
+                    <Name>extract_dob_age</Name>
+                    <Condition>local_format := "json" and !(local_userjson=null or local_userjson=EMPTY)</Condition>
+                </Step>
+                <Step>
+                    <Name>js_conv_age_to_dob</Name>
+                </Step>
+                <Step>
+                    <Name>keymap_get_auth_salt</Name>
+                </Step>
+                <Step>
+                    <Name>assign_transform_request</Name>
+                </Step>
+                <Step>
+                    <Name>assign_remove_x_forward_headers</Name>
+                </Step>
+                <Step>
+                    <Name>js_prevent_req_path_copy</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>extract_user_create_res_data</Name>
+                </Step>
+                <Step>
+                    <Name>fault_user_creation</Name>
+                    <Condition>!(success := "true")</Condition>
+                </Step>
+                <Step>
+                    <Name>js_add_trusted_headers</Name>
+                </Step>
+                <Step>
+                    <Name>assign_transform_usercheck_request</Name>
+                </Step>
+                <Step>
+                    <Name>assign_add_qp_usercheck_request</Name>
+                    <Condition>!(local_onetimetoken=null or local_onetimetoken=EMPTY)</Condition>
+                </Step>
+                <Step>
+                    <Name>service_callout_usercheck</Name>
+                </Step>
+                <Step>
+                    <Name>extract_user_check_res_data</Name>
+                </Step>
+                <Step>
+                    <Name>js_set_oauth_cred</Name>
+                </Step>
+                <Step>
+                    <Name>js_set_user_attrs</Name>
+                </Step>
+                <Step>
+                    <Name>oauthv2_gen_accesstoken</Name>
+                </Step>
+                <Step>
+                    <Name>assign_build_user_json_response</Name>
+                    <Condition>local_format := "json"</Condition>
+                </Step>
+                <Step>
+                    <Name>assign_build_user_xml_response</Name>
+                    <Condition>local_format := "xml"</Condition>
+                </Step>
+            </Response>
+        </Flow>
+    </Flows>
+    <HTTPTargetConnection>
+        <LoadBalancer>
+            <Algorithm>RoundRobin</Algorithm>
+            <RetryEnabled>true</RetryEnabled>
+            <MaxFailures>10</MaxFailures>
+            <Server name="Social_Target">
+                <IsEnabled>true</IsEnabled>  
+            </Server>
+        </LoadBalancer>
+        <Path>/nsl/services/user/{local_target_path}</Path>
+        <HealthMonitor>
+            <IsEnabled>true</IsEnabled>
+            <IntervalInSec>5</IntervalInSec>
+            <TCPMonitor>
+                <ConnectTimeoutInSec>10</ConnectTimeoutInSec>
+                <Port>443</Port>
+            </TCPMonitor>
+        </HealthMonitor>
+    </HTTPTargetConnection>
+    <PostFlow>
+        <Response>
+            #common_logging_post_flow_steps#
+        </Response>
+    </PostFlow>
+</TargetEndpoint>

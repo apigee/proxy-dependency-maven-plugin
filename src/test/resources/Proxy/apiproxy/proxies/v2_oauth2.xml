@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="v2_oauth2">
+    <Flows>
+        <Flow name="user_register">
+            <Request>
+                <Step>
+                    <Name>assign_set_user_create_target</Name>
+                </Step>
+                <Step>
+                    <Name>assign_set_profile_v2_version</Name>
+                </Step>
+            </Request>
+            <Response/>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/v2.0/oauth2/register</BasePath>
+        <VirtualHost>https_vhost</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="register">
+        <TargetEndpoint>register_or_login</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

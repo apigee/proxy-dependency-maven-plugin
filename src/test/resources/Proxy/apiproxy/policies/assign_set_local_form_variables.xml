@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="assign_set_local_form_variables">
+    <AssignVariable>
+        <Name>local_userjson</Name>
+        <Ref>request.formparam.object</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_format</Name>
+        <Ref>request.formparam.format</Ref>
+        <Value>json</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>local_onetimetoken</Name>
+        <Ref>request.formparam.onetimetoken</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

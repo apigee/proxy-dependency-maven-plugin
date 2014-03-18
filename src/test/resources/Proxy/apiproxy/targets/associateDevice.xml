@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="associateDevice">
+    <Flows>
+        <Flow name="oauth2_associateDevice">
+            <Request>
+                <Step>
+                    <Name>keymap_get_auth_salt</Name>
+                </Step>
+                <Step>
+                    <Name>assign_set_associate_device_params</Name>
+                </Step>
+                <Step>
+                    <Name>verify_apikey_clientid</Name>
+                </Step>
+                <Step>
+                    <Condition>(verifyapikey.verify_apikey_clientid.client_secret != local_secret)</Condition>
+                    <Name>fault_invalid_secret</Name>
+                </Step>
+                #common_spike_arrest_flow#
+                <Step>
+                    <Name>js_add_trusted_headers</Name>
+                </Step>
+                <Step>
+                    <Name>js_prevent_req_path_copy</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>extract_user_check_assoc_device_data</Name>
+                </Step>
+                <Step>
+                    <Name>js_set_oauth_cred</Name>
+                </Step>
+                <Step>
+                    <Name>js_set_user_attrs</Name>
+                </Step>
+                <Step>
+                    <Name>oauthv2_gen_accesstoken</Name>
+                </Step>
+                <Step>
+                    <Name>keymap_upd_din_token_link</Name>
+                    <Condition>!(din=null or din=EMPTY)</Condition>
+                </Step>
+                <Step>
+                    <Name>assign_build_assoc_dev_json_response</Name>
+                </Step>
+            </Response>
+        </Flow>
+    </Flows>
+    <HTTPTargetConnection>
+        <LoadBalancer>
+            <Algorithm>RoundRobin</Algorithm>
+            <RetryEnabled>true</RetryEnabled>
+            <Server name="Sport_Target">
+                <IsEnabled>true</IsEnabled>
+            </Server>
+        </LoadBalancer>
+        <Path>/profile/{local_profile_version}/sync/nikeusercheck</Path>
+        <HealthMonitor>
+            <IsEnabled>true</IsEnabled>
+            <IntervalInSec>5</IntervalInSec>
+            <TCPMonitor>
+                <ConnectTimeoutInSec>10</ConnectTimeoutInSec>
+                <Port>443</Port>
+            </TCPMonitor>
+        </HealthMonitor>
+    </HTTPTargetConnection>
+    <PostFlow>
+        <Response>
+            #common_logging_post_flow_steps#
+        </Response>
+    </PostFlow>
+</TargetEndpoint>

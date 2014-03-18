@@ -1,0 +1,11 @@
+<Step>
+    <Name>assign_set_variables</Name>
+</Step>
+<Step>
+    <Name>verify_apikey_clientid</Name>
+</Step>
+<Step>
+    <Condition>(verifyapikey.verify_apikey_clientid.client_secret != local_secret)</Condition>
+    <Name>fault_invalid_secret</Name>
+</Step>
+
