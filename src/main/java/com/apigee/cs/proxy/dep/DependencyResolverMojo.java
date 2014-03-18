@@ -1,6 +1,8 @@
 package com.apigee.cs.proxy.dep;
 
 
+import com.apigee.cs.proxy.dep.flowfrag.FlowFragmentProcessor;
+import com.apigee.cs.proxy.dep.policy.PolicyDependencyProcessor;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.AbstractFileFilter;
 import org.apache.commons.io.filefilter.IOFileFilter;
@@ -8,6 +10,7 @@ import org.apache.commons.io.filefilter.NotFileFilter;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugin.logging.Log;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
@@ -28,14 +31,14 @@ public class DependencyResolverMojo
 
     /**
      * Root directory of the proxy whose dependencies have to be
-     * resolved.
+     * resolved.This is by default set to "."
      */
     @Parameter(required = false, defaultValue = ".")
     private String proxySrcDir;
 
     /**
-     * Root directory of the proxy whose dependencies have to be
-     * resolved.
+     * Root directory whether proxy files have to placed after resoution.
+     * This is by default set to "./target"
      */
     @Parameter(required = false, defaultValue = "./target")
     private String proxyDestDir;
@@ -43,6 +46,14 @@ public class DependencyResolverMojo
 
     /**
      * List of proxies to use for dependency resolution.
+     * The policy references are searched in the textual order
+     * given in the configuration of the plugin. The first match
+     * of the policy resolution stops the search.
+     * <p/>
+     * Javascript resources files referenced by the proxy are
+     * resolved relative to the policy file found in the referenced proxies.
+     * The Javascript files must be present in the same proxy as the referencing
+     * policy file.
      */
     @Parameter(required = false)
     private String[] proxyRefs;
@@ -109,7 +120,9 @@ public class DependencyResolverMojo
     private void cleanupDestDir(File destDir) {
         final Collection<File> filesToBeDeleted = FileUtils.listFiles(destDir, new NotFileFilter(new SuffixFileFilter(".xml")),
                 getNonResourcesDirFilter());
+        final Log log = getLog();
         for (File file : filesToBeDeleted) {
+            log.debug("Deleting un-necesssary file: " + file.getPath());
             FileUtils.deleteQuietly(file);
         }
     }

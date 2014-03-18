@@ -1,4 +1,4 @@
-package com.apigee.cs.proxy.dep;
+package com.apigee.cs.proxy.dep.flowfrag;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.maven.plugin.logging.Log;
