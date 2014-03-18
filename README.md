@@ -101,7 +101,7 @@ Following is an example usage of the plugin.
                         &lt;/goals&gt;
                         &lt;configuration&gt;
                             &lt;proxySrcDir&gt;.&lt;/proxySrcDir&gt;
-                            &lt;proxyDestDir&gt;.&lt;/proxyDestDir&gt;
+                            &lt;proxyDestDir&gt;./target&lt;/proxyDestDir&gt;
                             &lt;proxyRefs&gt;
                                 &lt;proxyRef&gt;../CommonProxy&lt;/proxyRef&gt;
                             &lt;/proxyRefs&gt;
