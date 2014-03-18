@@ -37,7 +37,7 @@ public class DependencyResolverMojo
     private String proxySrcDir;
 
     /**
-     * Root directory whether proxy files have to placed after resoution.
+     * Root directory under which proxy files have to placed after resolution.
      * This is by default set to "./target"
      */
     @Parameter(required = false, defaultValue = "./target")
@@ -47,8 +47,8 @@ public class DependencyResolverMojo
     /**
      * List of proxies to use for dependency resolution.
      * The policy references are searched in the textual order
-     * given in the configuration of the plugin. The first match
-     * of the policy resolution stops the search.
+     * given in the configuration of the plugin. With first match
+     * of the policy, resolution stops.
      * <p/>
      * Javascript resources files referenced by the proxy are
      * resolved relative to the policy file found in the referenced proxies.
