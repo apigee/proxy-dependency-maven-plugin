@@ -36,7 +36,7 @@ Following is a example of referencing a flow fragment.
                     &lt;Condition&gt;(verifyapikey.verify_apikey_clientid.client_secret != local_secret)&lt;/Condition&gt;
                     &lt;Name&gt;fault_invalid_secret&lt;/Name&gt;
                 &lt;/Step&gt;
-               __#spike_arrest_and_quota#__
+                   #spike_arrest_and_quota#
                 &lt;Step&gt;
                     &lt;Name&gt;js_add_trusted_headers&lt;/Name&gt;
                 &lt;/Step&gt;
@@ -63,12 +63,12 @@ When the dependency plugin is run on the proxy containing the above file, the re
                     &lt;Condition&gt;(verifyapikey.verify_apikey_clientid.client_secret != local_secret)&lt;/Condition&gt;
                     &lt;Name&gt;fault_invalid_secret&lt;/Name&gt;
                 &lt;/Step&gt;
-               __&lt;Step&gt;
-    				&lt;Name&gt;spike_arrest_by_clientid&lt;/Name&gt;
-			&lt;/Step&gt;
-			&lt;Step&gt;
-    				&lt;Name&gt;quota_rate_limit&lt;/Name&gt;
-			&lt;/Step&gt;__
+                &lt;Step&gt;
+    			&lt;Name&gt;spike_arrest_by_clientid&lt;/Name&gt;
+		&lt;/Step&gt;
+		&lt;Step&gt;
+    			&lt;Name&gt;quota_rate_limit&lt;/Name&gt;
+		&lt;/Step&gt;
                 &lt;Step&gt;
                     &lt;Name&gt;js_add_trusted_headers&lt;/Name&gt;
                 &lt;/Step&gt;
