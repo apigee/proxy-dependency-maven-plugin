@@ -1,5 +1,6 @@
-package com.apigee.cs.proxy.dep;
+package com.apigee.cs.proxy.dep.policy.resources.js;
 
+import com.apigee.cs.proxy.dep.policy.resources.ResourceProcessor;
 import org.apache.commons.io.FileUtils;
 import org.apache.maven.plugin.logging.Log;
 
@@ -10,11 +11,11 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class JavaScriptResourceFileProcessor {
+public class JavaScriptResourceProcessor implements ResourceProcessor {
     private final ArrayList<String> jsFiles;
     private File policyFile;
 
-    public JavaScriptResourceFileProcessor(File policy) throws IOException {
+    public JavaScriptResourceProcessor(File policy) throws IOException {
         this.policyFile = policy;
         jsFiles = processPolicyJSResources(policy);
     }

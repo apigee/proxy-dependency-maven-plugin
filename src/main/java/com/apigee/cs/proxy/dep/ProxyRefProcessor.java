@@ -1,5 +1,8 @@
 package com.apigee.cs.proxy.dep;
 
+import com.apigee.cs.proxy.dep.flowfrag.FlowFragment;
+import com.apigee.cs.proxy.dep.policy.Policy;
+import com.apigee.cs.proxy.dep.policy.resources.js.JavaScriptResourceProcessor;
 import org.apache.commons.io.FileUtils;
 import org.apache.maven.plugin.logging.Log;
 
@@ -71,7 +74,7 @@ public class ProxyRefProcessor {
     public List<Policy> policies() throws IOException {
         ArrayList<Policy> policies = new ArrayList<Policy>();
         for (File policy : this.policies) {
-            policies.add(new Policy(policy));
+            policies.add(new Policy(policy, new JavaScriptResourceProcessor(policy)));
         }
         return policies;
     }

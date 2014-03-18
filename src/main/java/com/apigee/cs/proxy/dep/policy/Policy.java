@@ -1,5 +1,6 @@
-package com.apigee.cs.proxy.dep;
+package com.apigee.cs.proxy.dep.policy;
 
+import com.apigee.cs.proxy.dep.policy.resources.ResourceProcessor;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.maven.plugin.logging.Log;
@@ -9,12 +10,12 @@ import java.io.IOException;
 import java.util.HashSet;
 
 public class Policy {
-    private final String policyContent;
     private File policy;
+    private ResourceProcessor[] resourceProcessors;
 
-    public Policy(File policy) throws IOException {
+    public Policy(File policy, ResourceProcessor... resourceProcessors) throws IOException {
         this.policy = policy;
-        this.policyContent = FileUtils.readFileToString(policy);
+        this.resourceProcessors = resourceProcessors;
     }
 
     public void actOn(HashSet<String> refPolicies, File rootDir, Log log) throws IOException {
@@ -30,8 +31,9 @@ public class Policy {
         final File destDir = new File(rootDir.getPath() + "/apiproxy/policies");
         log.debug(String.format("Copying file %s to %s", policy.getAbsolutePath(), destDir.getAbsolutePath()));
         FileUtils.copyFileToDirectory(policy, destDir);
-        new JavaScriptResourceFileProcessor(policy).actOn(new File(rootDir.getPath() + "/apiproxy/resources/jsc"), log);
+        for (ResourceProcessor resourceProcessor : resourceProcessors) {
+            resourceProcessor.actOn(new File(rootDir.getPath() + "/apiproxy/resources/jsc"), log);
+        }
     }
-
 
 }
