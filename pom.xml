@@ -7,8 +7,7 @@
     <version>1.0</version>
     <packaging>maven-plugin</packaging>
     <name>proxy-dependency-maven-plugin</name>
-    <description>This plugin retrieves is intended to reolve and retrive all required policy files and proxy file
-        fragments.
+    <description>This plugin is intended to resolve proxy references.
     </description>
     <url>https://github.com/apigeecs/proxy-dependency-maven-plugin</url>
     <licenses>
