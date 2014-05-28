@@ -1,5 +1,0 @@
-<OAuthV2  enabled="true" continueOnError="true" async="false" name="oauthv2_verify_accesstoken">
-    <DisplayName>oauthv2_verify_accesstoken</DisplayName>
-    <AccessToken>access_token</AccessToken>
-    <Operation>VerifyAccessToken</Operation>
-</OAuthV2>

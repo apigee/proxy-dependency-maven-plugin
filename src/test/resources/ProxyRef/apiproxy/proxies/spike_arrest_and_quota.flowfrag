@@ -1,7 +1,0 @@
-<Step>
-    <Name>spike_arrest_by_clientid</Name>
-</Step>
-<Step>
-    <Name>quota_rate_limit</Name>
-    <Condition>!((apigee.apiproduct.name := "Sport") OR (apigee.apiproduct.name := "Brand") OR (apigee.apiproduct.name := "Commerce") OR (apigee.apiproduct.name := "Profile") OR (apigee.apiproduct.name := "Social"))</Condition>
-</Step>

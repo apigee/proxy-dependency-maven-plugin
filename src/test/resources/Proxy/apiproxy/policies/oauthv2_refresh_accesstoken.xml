@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<OAuthV2 enabled="true" continueOnError="false" async="false" name="oauthv2_refresh_accesstoken">
-  <Operation>RefreshAccessToken</Operation>
-  <ExpiresIn>3600000</ExpiresIn>
-  <GrantType>local_granttype</GrantType>
-  <RefreshToken>refresh_token</RefreshToken>
-  <RefreshTokenExpiresIn>46656000000</RefreshTokenExpiresIn>
-</OAuthV2>

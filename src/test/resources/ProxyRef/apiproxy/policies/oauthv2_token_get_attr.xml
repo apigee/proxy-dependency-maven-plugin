@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<GetOAuthV2Info async="false" continueOnError="false" enabled="true" name="oauthv2_token_get_attr">
-    <AccessToken ref="access_token"></AccessToken>
-</GetOAuthV2Info>

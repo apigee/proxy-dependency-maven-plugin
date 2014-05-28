@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Javascript async="false" continueOnError="false" enabled="true" timeLimit="200" name="js_setkeyandauth">
-    <ResourceURL>jsc://js_setkeyandauth.js</ResourceURL>
-    <IncludeURL>jsc://crypto_js/core-min.js</IncludeURL>
-    <IncludeURL>jsc://crypto_js/enc-base64-min.js</IncludeURL>
-</Javascript>

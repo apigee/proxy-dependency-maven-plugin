@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<AssignMessage async="false" continueOnError="false" enabled="true" name="assign_set_profile_v3_version">
-    <AssignVariable>
-        <Name>local_profile_version</Name>
-        <Value>v3.0</Value>
-    </AssignVariable>
-    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
-    <AssignTo createNew="false" transport="http" type="request"/>
-</AssignMessage>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Javascript async="false" continueOnError="false" enabled="true" timeLimit="200" name="js_38_target_endpoint_modification">
-    <DisplayName>js_38_target_endpoint_modification</DisplayName>
-    <FaultRules/>
-    <Properties/>
-    <ResourceURL>jsc://js_38_target_enpoint_modification.js</ResourceURL>
-</Javascript>

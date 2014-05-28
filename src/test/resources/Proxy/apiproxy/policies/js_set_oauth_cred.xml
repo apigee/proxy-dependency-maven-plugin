@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Javascript timeLimit="0" enabled="true" continueOnError="true" async="false" name="js_set_oauth_cred">
-    <ResourceURL>jsc://js_set_oauth_cred.js</ResourceURL>
-    <IncludeURL>jsc://crypto_js/core-min.js</IncludeURL>
-    <IncludeURL>jsc://crypto_js/enc-base64-min.js</IncludeURL>
-</Javascript>

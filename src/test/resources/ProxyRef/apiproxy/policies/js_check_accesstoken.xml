@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Javascript timeLimit="0" enabled="true" continueOnError="true" async="false" name="js_check_accesstoken">
-    <ResourceURL>jsc://js_check_accesstoken.js</ResourceURL>
-</Javascript>

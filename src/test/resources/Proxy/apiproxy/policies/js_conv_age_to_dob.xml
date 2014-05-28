@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Javascript timeLimit="0" enabled="true" continueOnError="true" async="false" name="js_conv_age_to_dob">
-    <ResourceURL>jsc://js_conv_age_to_dob.js</ResourceURL>
-</Javascript>
