@@ -1,0 +1,6 @@
+<FaultRule name="kmscalloutfailure">
+<Step>
+    <Condition>error.message ~~ ".*service_callout_kms.*"</Condition>
+    <Name>fault_kms_callout_failure</Name>
+</Step>
+</FaultRule>

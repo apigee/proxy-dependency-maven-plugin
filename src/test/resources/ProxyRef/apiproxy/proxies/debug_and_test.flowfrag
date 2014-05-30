@@ -1,0 +1,31 @@
+
+
+<Step>
+    <Name>js_setkeyandauth</Name>
+</Step>
+
+<Step>
+    <Name>js_setup_splunk_vars</Name>
+</Step>
+
+<Step>
+    <Name>keymap_get_cred</Name>
+</Step>
+
+<Step>
+    <Name>keymap_get_kmscredentials</Name>
+</Step>
+
+<Step>
+    <Name>oauthv2_token_get_attr</Name>
+</Step>
+
+<Step>
+    <Name>oauthv2_verify_accesstoken</Name>
+</Step>
+
+<Step>
+    <Name>service_callout_kms</Name>
+</Step>
+
+

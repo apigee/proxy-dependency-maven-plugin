@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="assign_init_variables">
+	<AssignVariable>
+		<Name>EMPTY</Name>
+		<Value />
+	</AssignVariable>
+    <AssignVariable>
+        <Name>cookie1</Name>
+        <Ref>oauthv2accesstoken.oauthv2_token_get_attr.accesstoken.cookie1</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+	<AssignTo createNew="false" transport="http" type="request" />
+</AssignMessage>
+

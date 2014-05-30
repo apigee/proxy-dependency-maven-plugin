@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="oauthv2_gen_ext_accesstoken">
+    <Operation>GenerateAccessToken</Operation>
+    <ExpiresIn>1000000</ExpiresIn>
+    <GrantType>grant_type</GrantType>
+    <RefreshTokenExpiresIn>10000000000</RefreshTokenExpiresIn>
+    <ExternalAccessToken>access_token</ExternalAccessToken>
+    <Attributes> 
+        <Attribute name="user_attribute1" ref="apigee.user_attribute1"></Attribute>
+        <Attribute name="user_attribute2" ref="apigee.user_attribute2"></Attribute>
+        <Attribute name="user_attribute3" ref="apigee.user_attribute3"></Attribute>
+
+    </Attributes>
+    <SupportedGrantTypes>
+        <GrantType>client_credentials</GrantType>
+    </SupportedGrantTypes>
+    <StoreToken>true</StoreToken>
+</OAuthV2>

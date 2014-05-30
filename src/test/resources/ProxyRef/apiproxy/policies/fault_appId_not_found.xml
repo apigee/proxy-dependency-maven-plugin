@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="fault_appId_not_found">
+    <FaultResponse>
+        <Set>
+            <Payload contentType="application/xml">
+                <consumer>
+                    <error>
+                        <message>Missing  appId</message>
+                    </error>
+                </consumer>
+            </Payload>
+            <StatusCode>400</StatusCode>
+        </Set>
+    </FaultResponse>
+</RaiseFault>

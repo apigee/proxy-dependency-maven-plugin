@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules>
+        #common_oauth_fault_rules#
+    </FaultRules>
+    <Flows>
+        <Flow name="common_request_flow">
+            <Request>
+
+                #spike_and_quota_rules#
+                #common_logging_post_flow#
+                <Step>
+                    <Name>assign_copy_request_to_response</Name>
+                </Step>
+            </Request>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/common/cid/request/flow&quot;)</Condition>
+        </Flow>
+        <Flow name="common_oauth_request_flow">
+            <Description/>
+            <Request>
+
+                #spike_and_quota_rules#
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/common/oauth/request/flow&quot;)</Condition>
+        </Flow>
+        <Flow name="common_target_request_flow">
+            <Description/>
+            <Request>
+
+                #spike_and_quota_rules#
+                #common_target_request_flow#
+                <Step>
+                    <Name>assign_copy_request_to_response</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/common/target/request/flow&quot;)</Condition>
+        </Flow>
+        <Flow name="common_target_flow">
+            <Description/>
+            <Request>
+
+                #common_target_request_flow#
+                <Step>
+                    <Name>assign_copy_request_to_response</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/common/cid/target/flow&quot;)</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/v1/commonproxy</BasePath>
+        <VirtualHost>http_vhost</VirtualHost>
+        <VirtualHost>https_vhost</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

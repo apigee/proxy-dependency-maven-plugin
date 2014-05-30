@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript timeLimit="0" enabled="true" continueOnError="true" async="false" name="js_prevent_req_path_copy">
+    <ResourceURL>jsc://js_prevent_req_path_copy.js</ResourceURL>
+</Javascript>

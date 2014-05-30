@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables enabled="true" continueOnError="false" async="false" name="extract_user_data">
+    <Source clearPayload="false">response</Source>
+    <Header name="pin">
+        <Pattern ignoreCase="true">{pin}</Pattern>
+    </Header>
+     <JSONPayload>
+        <Variable name="id">
+            <JSONPath>$.Id</JSONPath>
+        </Variable>
+        <Variable name="userpin">
+            <JSONPath>$.userPin</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>
+

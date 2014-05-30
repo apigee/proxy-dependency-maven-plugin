@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Quota async="false" continueOnError="false" enabled="true" name="rate_limit">
+    <DisplayName>rate_limit</DisplayName>
+  	<Allow countRef="verifyapikey.verify_apikey_clientid.apiproduct.developer.quota.limit"/>
+    <Interval ref="verifyapikey.verify_apikey_clientid.apiproduct.developer.quota.interval"/>
+    <Distributed>true</Distributed>
+    <Synchronous>false</Synchronous>
+    <TimeUnit ref="verifyapikey.verify_apikey_clientid.apiproduct.developer.quota.timeunit"/>
+    <Identifier ref="local_clientid"/>
+</Quota>

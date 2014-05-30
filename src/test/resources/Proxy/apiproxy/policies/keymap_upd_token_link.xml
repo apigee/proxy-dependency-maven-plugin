@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="keymap_upd_token_link"  mapIdentifier="Test">
+    <ExclusiveCache>false</ExclusiveCache>
+    <ExpiryTimeInSecs>-1</ExpiryTimeInSecs>
+    <Put override="true">
+        <Key>
+            <Parameter ref="pin"/>
+        </Key>
+        <Value ref="oauthv2accesstoken.oauthv2_gen_accesstoken.access_token"/>
+        <Value ref="oauthv2accesstoken.oauthv2_gen_accesstoken.refresh_token"/>
+        <Value ref="oauthv2accesstoken.oauthv2_gen_accesstoken.expires_in"/>
+    </Put>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

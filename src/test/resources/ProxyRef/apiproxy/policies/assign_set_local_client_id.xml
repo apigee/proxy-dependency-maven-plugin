@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="assign_set_local_client_id">
+    <DisplayName>assign_set_local_client_id</DisplayName>
+    <!-- When access token is found in 3.8 KMs-->
+    <AssignVariable>
+        <Name>local_clientid</Name>
+        <Ref>client_id</Ref>
+    </AssignVariable>
+
+    <!-- When access token is found in 4g-->
+    <AssignVariable>
+        <Name>local_clientid</Name>
+        <Ref>apigee.client_id</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

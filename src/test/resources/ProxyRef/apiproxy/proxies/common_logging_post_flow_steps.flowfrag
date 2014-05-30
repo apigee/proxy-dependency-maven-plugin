@@ -1,0 +1,19 @@
+                <Step> <Name>extract_refresh_token_params</Name> </Step>
+                <Step> <Name>extract_refresh_token_params</Name> </Step>
+                <Step> <Name>js_check_accesstoken</Name> </Step>
+                 <Step> <Name>js_setkeyandauth</Name> </Step>
+
+
+
+                <Step><Name>js_setkeyandauth</Name>
+                 </Step>
+             <Step>
+ <Name>js_setkeyandauth</Name>
+ </Step>
+
+                <Step>
+        <Name>js_setup_splunk_vars</Name>
+        </Step>
+        <Step>
+        <Name>log_splunk</Name>
+        </Step>

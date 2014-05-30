@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 enabled="true" continueOnError="false" async="false" name="oauthv2_gen_accesstoken">
+    <Operation>GenerateAccessToken</Operation>
+    <ExpiresIn>1000000</ExpiresIn>
+
+    <UserName>user</UserName>
+    <PassWord>pwd</PassWord>
+    <GrantType>grant_type</GrantType>
+    <RefreshTokenExpiresIn>100000000000</RefreshTokenExpiresIn>
+    <Attributes>
+        <Attribute name="user_attribute1" ref="local_usr_attr1"/>
+        <Attribute name="user_attribute2" ref="local_usr_attr2"/>
+        <Attribute name="user_attribute3" ref="local_usr_attr3"/>
+
+    </Attributes>
+    <SupportedGrantTypes>
+        <GrantType>password</GrantType>
+    </SupportedGrantTypes>
+</OAuthV2>

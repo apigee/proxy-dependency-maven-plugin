@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="assign_set_local_header_variables">
+    <AssignVariable>
+        <Name>EMPTY</Name>
+        <Value/>
+    </AssignVariable>
+
+
+    <AssignVariable>
+        <Name>local_host</Name>
+        <Ref>request.header.host</Ref>
+    </AssignVariable>
+
+
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

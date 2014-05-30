@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables enabled="true" continueOnError="false" async="false" name="extract_kms_token">
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <XMLPayload>
+    	<Variable name="client_id" type="string">
+      		<XPath>/OAuth20/access_token/client_id</XPath>
+    	</Variable>
+    	<Variable name="secret" type="string">
+      		<XPath>/OAuth20/access_token/secret</XPath>
+    	</Variable>
+
+  	</XMLPayload>
+    <Source clearPayload="false">kms_response</Source>
+    <VariablePrefix>kms</VariablePrefix>
+</ExtractVariables>

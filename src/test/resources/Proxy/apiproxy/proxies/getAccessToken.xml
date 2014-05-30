@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="getAccessToken">
+    #common_oauth_request_flow_fault#
+    <Flows>
+        <Flow name="getAccessToken">
+            <Request>
+            <Step>
+                <Name>assign_set_local_header_variables</Name>
+            </Step>
+            <Step>
+                <Name>assign_set_local_query_variables</Name>
+            </Step>
+            <Step>
+                <Name>verify_apikey_clientid</Name>
+            </Step>
+                <Step>
+                    <Name>js_check_accesstoken</Name>
+                </Step>
+
+            <Step>
+                <Name>assign_set_kms_auth</Name>
+                </Step>
+            <Step>
+                <Condition>(verifyapikey.verify_apikey_clientid.client_secret != local_secret)</Condition>
+                <Name>fault_invalid_secret</Name>
+            </Step>
+            #spike_arrest_and_quota#
+            <Step>
+                <Name>keymap_get_din_token_link</Name>
+            </Step>
+            <Step>
+                <Name>fault_invalid_din</Name>
+                <Condition>(access_token=null or access_token=EMPTY)</Condition>
+            </Step>
+        </Request>
+            <Response>
+                <Step>
+                    <Name>assign_build_get_token_response</Name>
+                </Step>
+
+                #common_target_request_flow#
+
+                #debug_and_test#
+
+                #common_logging_post_flow_steps#
+
+            </Response>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/getAccessToken</BasePath>
+        <VirtualHost>https_vhost</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="no-road-ahead"/>
+</ProxyEndpoint>

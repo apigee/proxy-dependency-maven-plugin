@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="keymap_get_cred" mapIdentifier="target_auth">
+    <ExclusiveCache>false</ExclusiveCache>
+    <ExpiryTimeInSecs>-1</ExpiryTimeInSecs>
+    <Get assignTo="target_basicauth_username" index="1">
+        <Key>
+            <Parameter>target_basicauth_username</Parameter>
+        </Key>
+    </Get>
+	 <Get assignTo="target_basicauth_password" index="1">
+        <Key>
+            <Parameter>target_basicauth_password</Parameter>
+        </Key>
+    </Get>
+
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

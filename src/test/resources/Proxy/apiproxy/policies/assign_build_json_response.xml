@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="assign_build_json_response">
+    <Remove>
+        <Headers>
+            <Header name="pin"/>
+
+        </Headers>
+    </Remove>
+    <Set>
+        <Payload contentType="text/json" variablePrefix="#" variableSuffix="%">
+            {
+                "access_token":"#oauthv2accesstoken.oauthv2_gen_accesstoken.access_token%",
+                "expires_in":"#oauthv2accesstoken.oauthv2_gen_accesstoken.expires_in%",
+                "refresh_token":"#oauthv2accesstoken.oauthv2_gen_accesstoken.refresh_token%",
+
+            }
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>
