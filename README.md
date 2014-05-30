@@ -88,9 +88,9 @@ Usage
 Following is an example usage of the plugin.
 <pre>
 &lt;plugin&gt;
-    &lt;groupId&gt;com.apigee.cs&lt;/groupId&gt;
+    &lt;groupId&gt;io.apigee.build-tools.enterprise4g&lt;/groupId&gt;
     &lt;artifactId&gt;proxy-dependency-maven-plugin&lt;/artifactId&gt;
-    &lt;version&gt;1.0&lt;/version&gt;
+    &lt;version&gt;2.0.0&lt;/version&gt;
     &lt;executions&gt;
         &lt;execution&gt;
             &lt;goals&gt;
@@ -112,15 +112,15 @@ The parameters for the plugin are as follows
  * proxySrcDir (Default: .) <br/>
       Optional directory name of the proxy whose dependencies have to be resolved.This
       is by default set to '.'
-      
+
  * proxyDestDir (Default: ./target)<br/>
       Optional directory name under which the proxy files have to placed after resolution. 	This is by default set to './target'
-      
+
  * proxyRefs<br/>
       List of proxies to use for dependency resolution. The policy references
       are searched in the textual order provided in the configuration of the
       plugin. With first match of the policy, resolution stops.
-      
+
       Javascript resources files referenced by the proxy are resolved relative
       to the policy file found in the referenced proxies. The Javascript files
       must be present in the same proxy as the referencing policy file.
@@ -135,7 +135,7 @@ Please feel free to contribute the same. If you need assistance do get in touch 
 
 People Involved
 ------------------------
-The idea of proxy reuse was proposed and defined by [Steve Richardson](srichardson@apigee.com)and [Priyanky Thomas](priyanky@apigee.com). The initial idea and implementation of the plugin is done by [Srikanth Seshadri](sseshadri@apigee.com) 
+The idea of proxy reuse was proposed and defined by [Steve Richardson](srichardson@apigee.com)and [Priyanky Thomas](priyanky@apigee.com). The initial idea and implementation of the plugin is done by [Srikanth Seshadri](sseshadri@apigee.com)
 
 
 
