@@ -1,6 +1,6 @@
-package com.apigee.cs.proxy.dep.policy;
+package io.apigee.buildTools.enterprise4g.dep.policy;
 
-import com.apigee.cs.proxy.dep.policy.resources.ResourceProcessor;
+import io.apigee.buildTools.enterprise4g.dep.policy.resources.ResourceProcessor;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.maven.plugin.logging.Log;

@@ -1,4 +1,4 @@
-package com.apigee.cs.proxy.dep.policy.resources;
+package io.apigee.buildTools.enterprise4g.dep.policy.resources;
 
 
 import org.apache.maven.plugin.logging.Log;
