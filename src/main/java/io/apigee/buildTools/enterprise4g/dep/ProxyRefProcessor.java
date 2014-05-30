@@ -1,8 +1,8 @@
-package com.apigee.cs.proxy.dep;
+package io.apigee.buildTools.enterprise4g.dep;
 
-import com.apigee.cs.proxy.dep.flowfrag.FlowFragment;
-import com.apigee.cs.proxy.dep.policy.Policy;
-import com.apigee.cs.proxy.dep.policy.resources.js.JavaScriptResourceProcessor;
+import io.apigee.buildTools.enterprise4g.dep.flowfrag.FlowFragment;
+import io.apigee.buildTools.enterprise4g.dep.policy.Policy;
+import io.apigee.buildTools.enterprise4g.dep.policy.resources.js.JavaScriptResourceProcessor;
 import org.apache.commons.io.FileUtils;
 import org.apache.maven.plugin.logging.Log;
 
