@@ -1,0 +1,7 @@
+<Step>
+    <Name>spike_arrest_by_clientid</Name>
+</Step>
+<Step>
+    <Name>quota_rate_limit</Name>
+    <Condition>!((apigee.apiproduct.name := "Silver") OR (apigee.apiproduct.name := "Gold") OR (apigee.apiproduct.name := "Platinum"))</Condition>
+</Step>

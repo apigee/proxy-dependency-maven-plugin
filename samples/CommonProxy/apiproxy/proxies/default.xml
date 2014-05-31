@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules>
+        #common_oauth_fault#
+    </FaultRules>
+    <Flows>
+        <Flow name="common_cid_request_flow">
+         <Request>
+            <Step>
+                <Name>assign_set_variables</Name>
+            </Step>
+
+                #common_cid_request_steps#
+                #spike_arrest_and_quota#
+                #common_logging_post_flow#
+                <Step>
+                    <Name>assign_handle_cookies_accept</Name>
+                </Step>
+            </Request>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/common/cid/request/flow&quot;)</Condition>
+        </Flow>
+       
+
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/v1/commonproxy</BasePath>
+        <VirtualHost>http_vhost</VirtualHost>
+        <VirtualHost>https_vhost</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

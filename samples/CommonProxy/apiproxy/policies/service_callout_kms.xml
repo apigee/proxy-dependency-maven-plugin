@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceCallout name="service_callout_kms">
+    <HTTPTargetConnection>
+        <Properties/>
+        #TargetServer#
+        <Path>/oauth20/accesstoken/attributes?token={access_token}</Path>
+    </HTTPTargetConnection>
+    <Request clearPayload="false" variable="kms_request"/>
+     <Response>kms_response</Response>
+</ServiceCallout>
