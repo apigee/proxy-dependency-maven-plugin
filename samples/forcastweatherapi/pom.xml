@@ -15,102 +15,104 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<parent>
-		<artifactId>parent-pom</artifactId>
-		<groupId>apigee</groupId>
-		<version>1.0</version>
-		<relativePath>../parent-pom/pom.xml</relativePath>
-	</parent>
-
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>apigee</groupId>
-	<artifactId>forecastweatherapi</artifactId>
-	<version>1.0</version>
-	<name>forecastweatherapi</name>
-	<packaging>pom</packaging>
-    <build>
-        <plugins>
-
-            <plugin>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>2.5</version>
-                <executions>
-                    <execution>
-                        <id>auto-clean</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>io.apigee.build-tools.enterprise4g</groupId>
-                <artifactId>proxy-dependency-maven-plugin</artifactId>
-                <version>2.0.0-SNAPSHOT</version>
-                <executions>
-                    <execution>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>resolve</goal>
-                        </goals>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>parent-pom</artifactId>
+        <groupId>apigee</groupId>
+        <version>1.0</version>
+        <relativePath>../parent-pom/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>apigee</groupId>
+    <artifactId>forecastweatherapi</artifactId>
+    <version>1.0</version>
+    <name>forecastweatherapi</name>
+    <packaging>pom</packaging>
+    <profiles>
+        <profile>
+            <id>test</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-clean-plugin</artifactId>
+                        <version>2.5</version>
+                        <executions>
+                            <execution>
+                                <id>auto-clean</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>clean</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>io.apigee.build-tools.enterprise4g</groupId>
+                        <artifactId>proxy-dependency-maven-plugin</artifactId>
+                        <version>2.0.0</version>
+                        <executions>
+                            <execution>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>resolve</goal>
+                                </goals>
+                                <configuration>
+                                    <proxyRefs>
+                                        <proxyRef>../CommonProxy</proxyRef>
+                                    </proxyRefs>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>io.apigee.build-tools.enterprise4g</groupId>
+                        <artifactId>apigee-edge-maven-plugin</artifactId>
                         <configuration>
-                            <proxyRefs>
-                                <proxyRef>../CommonProxy</proxyRef>
-                            </proxyRefs>
+                            <skip>false</skip>
+                            <!-- Use this module level config to skip module build. Make it true -->
                         </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>io.apigee.build-tools.enterprise4g</groupId>
-                <artifactId>apigee-edge-maven-plugin</artifactId>
-                <configuration>
-                    <skip>false</skip> <!-- Use this module level config to skip module build. Make it true -->
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>configure-bundle-step</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>configure</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.lazerycode.jmeter</groupId>
-                <artifactId>jmeter-maven-plugin</artifactId>
-                <version>1.8.1</version>
-                <executions>
-                    <execution>
-                        <id>jmeter-tests</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>jmeter</goal>
-                        </goals>
+                        <executions>
+                            <execution>
+                                <id>configure-bundle-step</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>configure</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.lazerycode.jmeter</groupId>
+                        <artifactId>jmeter-maven-plugin</artifactId>
+                        <version>1.8.1</version>
+                        <executions>
+                            <execution>
+                                <id>jmeter-tests</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>jmeter</goal>
+                                </goals>
+                                <configuration>
+                                    <skipTests>${skipTests}</skipTests>
+                                    <!-- default true -->
+                                    <ignoreResultFailures>true</ignoreResultFailures>
+                                    <suppressJMeterOutput>false</suppressJMeterOutput>
+                                    <propertiesUser>
+                                        <testData>weather_test.csv</testData>
+                                        <threadNum>5</threadNum>
+                                        <rampUpPeriodSecs>5</rampUpPeriodSecs>
+                                        <loopCount>2</loopCount>
+                                    </propertiesUser>
+                                </configuration>
+                            </execution>
+                        </executions>
                         <configuration>
-                            <skipTests>false</skipTests>
-                            <ignoreResultFailures>true</ignoreResultFailures>
-                            <suppressJMeterOutput>false</suppressJMeterOutput>
-                            <propertiesUser>
-                                <testEnv>${testEnv}</testEnv>
-                            </propertiesUser>
+                            <testFilesDirectory>tests</testFilesDirectory>
+                            <testResultsTimestamp>false</testResultsTimestamp>
                         </configuration>
-                    </execution>
-                </executions>
-                <configuration>
-                    <testFilesDirectory>test</testFilesDirectory>
-                    <testResultsTimestamp>false</testResultsTimestamp>
-                </configuration>
-            </plugin>
-
-        </plugins>
-    </build>
-
-
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

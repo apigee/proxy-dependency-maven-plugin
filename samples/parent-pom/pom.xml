@@ -60,30 +60,25 @@
 
         <!-- This is where you add the environment specific properties under various profile names -->
         <profiles>
-
-
-
                  <profile>
-                        <id>ecn10</id>
+                        <id>test</id>
                         <properties>
-                                <apigee.profile>ecn10</apigee.profile>
-                                <apigee.env>ecn10</apigee.env>
-                                <apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
-                                <apigee.apiversion>v1</apigee.apiversion> 
-                                <apigee.org>${org}</apigee.org>
-                                <apigee.username>${username}</apigee.username>
-                                <apigee.password>${password}</apigee.password>
-                                <!-- Below option are optional and used only for development
-                    1)option validate - validates the proxy schema beofre deployment and so helpful in preventing deploymnet issues due to invalid policies.
-                    2)option update is used to re-write the apiproxy version to prevent creation of new version each time. use this only for dev environment. 
-                       For Ugrade to higher environments it is better to keep older active version for fallbacks  -->
-                <apigee.options>validate</apigee.options>
+                            <org>testmyapi</org>  <!-- default org, replace with dafault org to avoid passing parameter e.g. -Dorg testmyapi -->
+                            <options>validate</options>  <!-- default org, replace with dafault org to avoid passing parameter e.g. -Dorg testmyapi -->
+                            <apigee.profile>test</apigee.profile>
+                            <apigee.env>test</apigee.env>
+                            <apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+                            <apigee.apiversion>v1</apigee.apiversion>
+                            <apigee.org>${org}</apigee.org>
+                            <apigee.username>${username}</apigee.username>
+                            <apigee.password>${password}</apigee.password>
+                            <apigee.options>${options}</apigee.options>
+                            <!-- Below option are optional and used only for development
+                            1)option validate - validates the proxy schema beofre deployment and so helpful in preventing deploymnet issues due to invalid policies.
+                            2)option update is used to re-write the apiproxy version to prevent creation of new version each time. use this only for dev environment. 
+                               For Ugrade to higher environments it is better to keep older active version for fallbacks  -->
                         </properties>
                 </profile>
-		
-
-
-
         </profiles>
 
 
