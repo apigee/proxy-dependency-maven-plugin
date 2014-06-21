@@ -51,7 +51,7 @@ Following is a example of referencing a flow fragment.
 </TargetEndpoint>
 ```
 When the dependency plugin is run on the proxy containing the above file, the reference will be replaced by the content of the flow fragment file. The output would be the following
-####*Filename:  `dummy_endpoint.xml`*
+####Filename:  `dummy_endpoint.xml`
 ```xml
 <TargetEndpoint name="dummyEndPonint">
     <Flows>
