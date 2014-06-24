@@ -13,6 +13,8 @@
 
                 #xmltojson#
 
+                #common-js-vars#
+
                 <Step>
                     <FaultRules/>
                     <Name>Assign-Message-1</Name>
