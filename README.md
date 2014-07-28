@@ -32,7 +32,7 @@ Two kinds of dependency resolution is supported by this tool they are - `Policy 
 
 ####Policy Resolution
 
-An API proxy's proxy endpoint or target endpoint can reference policies that are common. These referenced policies are copied by the plugin to the `policies` directory of the API proxy. If the policy referenced is language based the corresponding resources is copied into the `resources` directory. Thus, this feature enables policy re-ruse.
+An API proxy's proxy endpoint or target endpoint can reference policies that are common. These referenced policies are copied by the plugin to the `policies` directory of the API proxy. If the policy referenced is language based, the corresponding resources are copied into the `resources` directory. Thus, this feature enables policy re-use.
 
 ####Flow Resolution
 
@@ -48,7 +48,7 @@ Flow fragment is a text file containing a list of reusable steps with extension 
 </Step>
 ```
 
-Flow fragment can be referenced by proxy or target endpoint using the format `#flow-fragment-basename#` without the `.flowfrag ` extension. Such a reference results in macro style substitution of the content of the flow fragment file, followed by policy resolution of the all the policies referenced but the fragment. Thus enabling flow re-use across proxies
+Flow fragment can be referenced by proxy or target endpoint using the format `#flow-fragment-base-filename#` without the `.flowfrag ` extension. Such a reference results in macro style substitution of the content of the flow fragment file, followed by policy resolution of the all the policies referenced by the fragment. Thus enabling flow re-use across proxies
 
 **Note:** *Flow fragments files should be present only in `proxies` directory of the referenced proxies.*
 
@@ -110,8 +110,7 @@ ClientValidationAPI
 │       └── dummy_target_endpoint.xml
 ```
 
-The Client Validation API itself consists of flow fragment `validation.flowfrag` that is used across multiple endpoints - `dummy_proxy_endpoint.xml `and  `dummy_target_endpoint.xml` within the same proxy. *This flow re-use within the s same proxy itself.
-*
+The Client Validation API itself consists of flow fragment `validation.flowfrag` that is used across multiple endpoints - `dummy_proxy_endpoint.xml `and  `dummy_target_endpoint.xml` within the same proxy. *This flow re-use within the s same proxy itself.*
 
 ####Filename: `validation.flowfrag`
 ```xml
@@ -173,9 +172,9 @@ When the dependency plugin is run on the proxy containing the above file -
 
 *flow fragment* resolution process kicks-in
 
-+ **\#validation\#** tag is found in the file `dummy_proxy_endpoint.xml`. A flow fragment named `validation.flowfrag` is searched in the `proxies` directory of same proxy - Client Validation API. The file with such as name is found; the  \#validation\# is replaced by the contents of the file in `dummy_proxy_endpoint.xml`
++ **\#validation\#** tag is found in the file `dummy_proxy_endpoint.xml`. A flow fragment named `validation.flowfrag` is searched in the `proxies` directory of same proxy - Client Validation API. The file with such as name is found; the  `#validation#` is replaced by the contents of the file in `dummy_proxy_endpoint.xml`
 
-+ **\#spike_arrest_and_quota\#** tag is found next.  A flow fragment named `spike_arrest_and_quota.flowfrag` is searched in the `proxies` directory of same proxy- Client Validation API. No such file exists. Now the list of referenced proxies is obtained; the list contains only `CommonProxy`. A flow fragment named `spike_arrest_and_quota.flowfrag` is searched in the `proxies` directory of  `CommonProxy`. The file is found; the  \#spike_arrest_and_quota\# is replaced by the contents of that file in `dummy_proxy_endpoint.xml`
++ **\#spike_arrest_and_quota\#** tag is found next.  A flow fragment named `spike_arrest_and_quota.flowfrag` is searched in the `proxies` directory of same proxy- Client Validation API. No such file exists. Now the list of referenced proxies is obtained; the list contains only `CommonProxy`. A flow fragment named `spike_arrest_and_quota.flowfrag` is searched in the `proxies` directory of  `CommonProxy`. The file is found; the ` #spike_arrest_and_quota#` is replaced by the contents of that file in `dummy_proxy_endpoint.xml`
 
 The resultant file after flow fragment resolution is as follows.
 
@@ -214,23 +213,24 @@ The resultant file after flow fragment resolution is as follows.
 
 *policy resolution* kicks-in next
 
-+  ***assign_set_local_header_variables*** the policy is searched for in policies directory of same proxy -  Client Validation API. Its found, nothing needs to be done.
++  ***assign_set_local_header_variables***  policy is searched for in `policies` directory of same proxy -  Client Validation API. It's found, nothing needs to be done.
 
-+  ***fault_invalid_secret* **the policy is searched for in policies directory of same proxy -  Client Validation API. Its found, nothing needs to be done.
++  ***fault_invalid_secret***  policy is searched for in `policies` directory of same proxy -  Client Validation API. It's found, nothing needs to be done.
 
-+ ***spike_arrest_by_clientid*** the policy is searched for in policies directory of same proxy -  Client Validation API.Its not found. Now the list of referenced proxies is obtained; the list contains only `CommonProxy`. The policy is searched in the `policies` directory of  `CommonProxy`. The file is found; and the same file is copied to the `policies` directory under the `proxyDestDir` directory specified in the maven `pom` file.
++ ***spike_arrest_by_clientid***  policy is searched for in `policies` directory of same proxy -  Client Validation API.It's not found. Now the list of referenced proxies is obtained; the list contains only `CommonProxy`. The policy is searched in the `policies` directory of  `CommonProxy`. The file is found; and the same file is copied to the `policies` directory under the `proxyDestDir` directory specified in the maven `pom` file.
 
 + ***quota_rate_limit*** the policy is searched for in policies directory of same proxy -  Client Validation API.Its not found. Now the list of referenced proxies is obtained; the list contains only `CommonProxy`. The policy is searched in the `policies` directory of  `CommonProxy`. The file is found; and the same file is copied to the `policies` directory under the `proxyDestDir` directory specified in the maven `pom` file.
 
-+ ***js_add_trusted_headers*** the policy is searched for in policies directory of same proxy -  Client Validation API.Its not found. Now the list of referenced proxies is obtained; the list contains only `CommonProxy`. The policy is searched in the `policies` directory of  `CommonProxy`. The file is found; and the same file is copied to the `policies` directory under the `proxyDestDir` directory specified in the maven `pom` file. This policy also references the JS resource file `js_add_trusted_headers.js` - this file is also copied to the `resources/jsc` directory under `proxyDestDir` directory 
++ ***js_add_trusted_headers***  policy is searched for in `policies` directory of same proxy -  Client Validation API.It's not found. Now the list of referenced proxies is obtained; the list contains only `CommonProxy`. The policy is searched in the `policies` directory of  `CommonProxy`. The file is found; and the same file is copied to the `policies` directory under the `proxyDestDir` directory specified in the maven `pom` file. This policy also references the JS resource file `js_add_trusted_headers.js` - this file is also copied to the `resources/jsc` directory under `proxyDestDir` directory 
 
-+ ***js_prevent_req_path_copy*** the policy is searched for in policies directory of same proxy -  Client Validation API. Its found, nothing needs to be done.
++ ***js_prevent_req_path_copy*** the policy is searched for in `policies` directory of same proxy -  Client Validation API. Its found, nothing needs to be done.
 
-**Note: Please note all the resolution performed is not in place, files are read from `proxySrcDir` directory  resolved and copied to `proxyDestDir` directory **
+**Note: Please note all the resolution performed is not in-place, files are read from `proxySrcDir` directory  resolved and copied to `proxyDestDir` directory specified in `pom` file**
 
 Usage
 ---------
 Following is an example usage of the plugin.
+
 ```xml
 <plugin>
     <groupId>io.apigee.build-tools.enterprise4g</groupId>
