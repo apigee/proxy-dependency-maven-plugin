@@ -219,11 +219,11 @@ The resultant file after flow fragment resolution is as follows.
 
 + ***spike_arrest_by_clientid***  policy is searched for in `policies` directory of same proxy -  Client Validation API.It's not found. Now the list of referenced proxies is obtained; the list contains only `CommonProxy`. The policy is searched in the `policies` directory of  `CommonProxy`. The file is found; and the same file is copied to the `policies` directory under the `proxyDestDir` directory specified in the maven `pom` file.
 
-+ ***quota_rate_limit*** the policy is searched for in policies directory of same proxy -  Client Validation API.Its not found. Now the list of referenced proxies is obtained; the list contains only `CommonProxy`. The policy is searched in the `policies` directory of  `CommonProxy`. The file is found; and the same file is copied to the `policies` directory under the `proxyDestDir` directory specified in the maven `pom` file.
++ ***quota_rate_limit***  policy is searched for in policies directory of same proxy -  Client Validation API.Its not found. Now the list of referenced proxies is obtained; the list contains only `CommonProxy`. The policy is searched in the `policies` directory of  `CommonProxy`. The file is found; and the same file is copied to the `policies` directory under the `proxyDestDir` directory specified in the maven `pom` file.
 
 + ***js_add_trusted_headers***  policy is searched for in `policies` directory of same proxy -  Client Validation API.It's not found. Now the list of referenced proxies is obtained; the list contains only `CommonProxy`. The policy is searched in the `policies` directory of  `CommonProxy`. The file is found; and the same file is copied to the `policies` directory under the `proxyDestDir` directory specified in the maven `pom` file. This policy also references the JS resource file `js_add_trusted_headers.js` - this file is also copied to the `resources/jsc` directory under `proxyDestDir` directory 
 
-+ ***js_prevent_req_path_copy*** the policy is searched for in `policies` directory of same proxy -  Client Validation API. Its found, nothing needs to be done.
++ ***js_prevent_req_path_copy***  policy is searched for in `policies` directory of same proxy -  Client Validation API. Its found, nothing needs to be done.
 
 **Note: Please note all the resolution performed is not in-place, files are read from `proxySrcDir` directory  resolved and copied to `proxyDestDir` directory specified in `pom` file**
 
