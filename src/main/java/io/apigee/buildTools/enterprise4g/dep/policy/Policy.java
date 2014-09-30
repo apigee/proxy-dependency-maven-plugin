@@ -32,7 +32,7 @@ public class Policy {
         log.debug(String.format("Copying file %s to %s", policy.getAbsolutePath(), destDir.getAbsolutePath()));
         FileUtils.copyFileToDirectory(policy, destDir);
         for (ResourceProcessor resourceProcessor : resourceProcessors) {
-            resourceProcessor.actOn(new File(rootDir.getPath() + "/apiproxy/resources/jsc"), log);
+            resourceProcessor.actOn(new File(rootDir.getPath() + "/apiproxy/resources/"), log);
         }
     }
 

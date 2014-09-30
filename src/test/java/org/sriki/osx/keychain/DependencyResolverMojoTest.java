@@ -48,16 +48,26 @@ public class DependencyResolverMojoTest {
         final File policiesDir = new File(target.getPath() + "/apiproxy/policies");
         final File resDir = new File(target.getPath() + "/apiproxy/resources");
         final File jsResDir = new File(target.getPath() + "/apiproxy/resources/jsc");
+        final File javaResDir = new File(target.getPath() + "/apiproxy/resources/java");
+        final File pyResDir = new File(target.getPath() + "/apiproxy/resources/py");
+        final File xslResDir = new File(target.getPath() + "/apiproxy/resources/xsl");
         final File proxiesDir = new File(target.getPath() + "/apiproxy/proxies");
         assertThat(policiesDir.exists(), is(true));
         assertThat(resDir.exists(), is(true));
         assertThat(jsResDir.exists(), is(true));
         assertThat(proxiesDir.exists(), is(true));
+        assertThat(javaResDir.exists(), is(true));
+        assertThat(pyResDir.exists(), is(true));
+        assertThat(xslResDir.exists(), is(true));
+
         assertThat(new File(policiesDir, "common_oauth_fault.flowfrag").exists(), is(false));
         assertThat(new File(resDir, "common_oauth_fault.flowfrag").exists(), is(true));
-        assertThat(policiesDir.list().length, is(44));
+        assertThat(policiesDir.list().length, is(47));
         assertPolicies(policiesDir);
         assertJSFiles(jsResDir);
+        assertJavailes(javaResDir);
+        assertPyFiles(pyResDir);
+        assertXSLFiles(xslResDir);
     }
 
     private void assertJSFiles(File jsResDir) {
@@ -81,6 +91,35 @@ public class DependencyResolverMojoTest {
 
     }
 
+    private void assertJavailes(File javaResDir) {
+        String[] expectedFiles = new String[]{"xslt.jar"};
+        Arrays.sort(expectedFiles);
+        String[] actualFiles = javaResDir.list();
+        Arrays.sort(actualFiles);
+        assertThat(actualFiles, is(expectedFiles));
+
+
+    }
+    private void assertPyFiles(File pyResDir) {
+        String[] expectedFiles = new String[]{"createURL.py"};
+        Arrays.sort(expectedFiles);
+        String[] actualFiles = pyResDir.list();
+        Arrays.sort(actualFiles);
+        assertThat(actualFiles, is(expectedFiles));
+
+
+    }
+
+    private void assertXSLFiles(File xslResDir) {
+        String[] expectedFiles = new String[]{"transform_geocode.xsl"};
+        Arrays.sort(expectedFiles);
+        String[] actualFiles = xslResDir.list();
+        Arrays.sort(actualFiles);
+        assertThat(actualFiles, is(expectedFiles));
+
+
+    }
+
     private void assertPolicies(File policiesDir) {
         String[] expectedPolicies = new String[]{"assign_add_qp_request.xml",
                 "assign_build_get_token_response.xml", "assign_build_json_response.xml",
@@ -98,7 +137,7 @@ public class DependencyResolverMojoTest {
                 "js_setkeyandauth.xml",  "oauthv2_token_get_attr.xml",
                 "js_setup_splunk_vars.xml", "log_splunk.xml", "quota_rate_limit.xml", "spike_arrest_by_clientid.xml", "keymap_get_cred.xml",
                 "assign_alter_queryparams_headers.xml", "js_add_trusted_headers.xml", "assign_remove_x_forward_headers.xml",
-                "assign_init_variables.xml", "fault_appId_not_found.xml"
+                "assign_init_variables.xml", "fault_appId_not_found.xml","java_transform.xml","py_createURL.xml","xsl_transform_geocode.xml"
         };
         Arrays.sort(expectedPolicies);
         final String[] actualPolicies = policiesDir.list();
@@ -108,7 +147,9 @@ public class DependencyResolverMojoTest {
 
     @Before
     public void setUp() throws Exception {
-        testTempDir = FileUtils.getTempDirectory();
+        testTempDir = new File("/apigee/Test");
+        //FileUtils.getTempDirectory();
+        System.out.println("testTempDir"+testTempDir);
         FileUtils.forceMkdir(testTempDir);
         FileUtils.copyDirectory(new File("src/test/resources"), testTempDir);
         System.out.println(testTempDir.getAbsolutePath());

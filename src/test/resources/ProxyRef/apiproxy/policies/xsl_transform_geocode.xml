@@ -1,0 +1,3 @@
+<XSL name="xsl_bing_geocode_search">
+    <ResourceURL>xsl://transform_geocode.xsl</ResourceURL>
+</XSL>

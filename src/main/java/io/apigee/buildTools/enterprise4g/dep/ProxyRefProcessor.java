@@ -2,7 +2,7 @@ package io.apigee.buildTools.enterprise4g.dep;
 
 import io.apigee.buildTools.enterprise4g.dep.flowfrag.FlowFragment;
 import io.apigee.buildTools.enterprise4g.dep.policy.Policy;
-import io.apigee.buildTools.enterprise4g.dep.policy.resources.js.JavaScriptResourceProcessor;
+import io.apigee.buildTools.enterprise4g.dep.policy.resources.CommonResourceProcessor;
 import org.apache.commons.io.FileUtils;
 import org.apache.maven.plugin.logging.Log;
 
@@ -74,7 +74,7 @@ public class ProxyRefProcessor {
     public List<Policy> policies() throws IOException {
         ArrayList<Policy> policies = new ArrayList<Policy>();
         for (File policy : this.policies) {
-            policies.add(new Policy(policy, new JavaScriptResourceProcessor(policy)));
+            policies.add(new Policy(policy, new CommonResourceProcessor(policy)));
         }
         return policies;
     }

@@ -1,0 +1,4 @@
+<JavaCallout name="java_execute_chained_XSLT">
+	<ResourceURL>java://xslt.jar</ResourceURL>
+	<ClassName>com.apigee.target.xslt.XsltChaining</ClassName>
+</JavaCallout>

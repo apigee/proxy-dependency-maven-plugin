@@ -1,6 +1,5 @@
-package io.apigee.buildTools.enterprise4g.dep.policy.resources.js;
+package io.apigee.buildTools.enterprise4g.dep.policy.resources;
 
-import io.apigee.buildTools.enterprise4g.dep.policy.resources.ResourceProcessor;
 import org.apache.commons.io.FileUtils;
 import org.apache.maven.plugin.logging.Log;
 
@@ -11,11 +10,11 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class JavaScriptResourceProcessor implements ResourceProcessor {
+public class CommonResourceProcessor implements ResourceProcessor {
     private final ArrayList<String> jsFiles;
     private File policyFile;
 
-    public JavaScriptResourceProcessor(File policy) throws IOException {
+    public CommonResourceProcessor(File policy) throws IOException {
         this.policyFile = policy;
         jsFiles = processPolicyJSResources(policy);
     }
@@ -24,12 +23,12 @@ public class JavaScriptResourceProcessor implements ResourceProcessor {
         final List<String> lines = FileUtils.readLines(srcFile);
         final ArrayList<String> resourceFiles = new ArrayList<String>();
         for (String line : lines) {
-            processJSURLs(resourceFiles, line);
+            processResourceURLs(resourceFiles, line);
         }
         return resourceFiles;
     }
 
-    private void processJSURLs(ArrayList<String> resourceFiles, String line) {
+    private void processResourceURLs(ArrayList<String> resourceFiles, String line) {
         String res = getUrl(line, "ResourceURL");
         addResToList(resourceFiles, res);
         res = getUrl(line, "IncludeURL");
@@ -43,10 +42,25 @@ public class JavaScriptResourceProcessor implements ResourceProcessor {
     }
 
     private String getUrl(String line, String urlTag) {
-        Pattern pattern = Pattern.compile(String.format("<%1$s>jsc://(.*)</%1$s>", urlTag));
-        Matcher matcher = pattern.matcher(line.trim());
-        if (matcher.find()) {
-            return matcher.group(1);
+        Pattern pattern;
+        String resources[] = new String[]{"jsc", "java", "py", "xsl","node"};
+        for (String resource : resources) {
+            pattern = Pattern.compile(String.format("<%1$s>" + resource + "://(.*)</%1$s>", urlTag));
+            Matcher matcher = pattern.matcher(line.trim());
+            if (matcher.find()) {
+                if (resource.equals("jsc")) {
+                    return "jsc/" + matcher.group(1);
+                } else if (resource.equals("java")) {
+                    return "java/" + matcher.group(1);
+                } else if (resource.equals("py")) {
+                    return "py/" + matcher.group(1);
+                } else if (resource.equals("xsl")) {
+                    return "xsl/" + matcher.group(1);
+                }else if (resource.equals("node")) {
+                    return "node/" + matcher.group(1);
+                }
+
+            }
         }
         return null;
     }
@@ -66,7 +80,7 @@ public class JavaScriptResourceProcessor implements ResourceProcessor {
     }
 
     private void copyResourceFile(String resourceFile, File targetDir, Log log) throws IOException {
-        final File inFile = new File(policyFile.getParent() + "/../resources/jsc/" + resourceFile);
+        final File inFile = new File(policyFile.getParent() + "/../resources/" + resourceFile);
         if (!inFile.exists()) {
             log.warn(String.format("File %s does not exists.", inFile.getAbsolutePath()));
             return;

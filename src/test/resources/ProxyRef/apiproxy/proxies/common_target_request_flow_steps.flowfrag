@@ -22,4 +22,16 @@
 <Step>
     <Name>assign_set_variables</Name>
 </Step>
+<Step>
+    
+    <Name>xsl_transform_geocode</Name>
+</Step>
+<Step>
+    
+    <Name>py_createURL</Name>
+</Step>
+<Step>
+    
+    <Name>java_transform</Name>
+</Step>
 

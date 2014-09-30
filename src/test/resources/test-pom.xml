@@ -22,10 +22,10 @@
             <plugin>
                 <groupId>io.apigee.build-tools.enterprise4g</groupId>
                 <artifactId>proxy-dependency-maven-plugin</artifactId>
-                <version>1.0.0</version>
+                <version>2.1.0</version>
                 <configuration>
-                    <!--<proxySrcDir>.</proxySrcDir>-->
-                    <!--<proxyDestDir>target</proxyDestDir>-->
+                    <proxySrcDir>.</proxySrcDir>
+                    <proxyDestDir>target</proxyDestDir>
                     <proxyRefs>
                         <proxyRef>ProxyRef</proxyRef>
                         <proxyRef>ProxyRef2</proxyRef>
