@@ -314,9 +314,9 @@ Repeat the entire process for each of the proxy and target endpoints.
 
 Current State
 ------------------
-The proxy dependency maven plugin copies all the policies referenced. It also copies JavaSrcipt resources referenced by the Javascript policies too.
+The proxy dependency maven plugin copies all the policies referenced. It also copies JavaSrcipt , java , python and xsl resoirces referenced by the corresponding policies too.
 
-We need to implement support to copy other extension policies like Java and Python.
+The support for non -js resources was as part of release 2.1.0
 
 Please feel free to contribute the same. If you need assistance do get in touch with  [Srikanth Seshadri](sseshadri@apigee.com)  or [Priyanky Thomas](priyanky@apigee.com).
 
