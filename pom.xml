@@ -44,7 +44,7 @@
         <url>https://github.com/apigee/proxy-dependency-maven-plugin</url>
         <connection>scm:git:https://github.com/apigee/proxy-dependency-maven-plugin.git</connection>
         <developerConnection>scm:git:https://github.com/apigee/proxy-dependency-maven-plugin.git</developerConnection>
-        <tag>proxy-dependency-maven-plugin-2.0.0</tag>
+        <tag>proxy-dependency-maven-plugin-2.1.0</tag>
 
     </scm>
     <developers>
@@ -199,6 +199,17 @@
 
     <build>
         <plugins>
+            <plugin>
+               <groupId>org.sonatype.plugins</groupId>
+               <artifactId>nexus-staging-maven-plugin</artifactId>
+               <version>1.6.3</version>
+               <extensions>true</extensions>
+                <configuration>
+                 <serverId>ossrh</serverId>
+                 <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                 <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-plugin-plugin</artifactId>
