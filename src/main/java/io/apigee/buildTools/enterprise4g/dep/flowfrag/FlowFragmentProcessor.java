@@ -42,7 +42,9 @@ public class FlowFragmentProcessor {
     private List<File> getAllProxyXMLFiles() {
         ArrayList<File> xmlFiles = new ArrayList<File>();
         for (File proxyDir : proxyDirs) {
-            xmlFiles.addAll(FileUtils.listFiles(proxyDir, new String[]{"xml"}, false));
+            if (proxyDir.isDirectory()) {
+                xmlFiles.addAll(FileUtils.listFiles(proxyDir, new String[]{"xml"}, false));
+            }
         }
         return xmlFiles;
     }
