@@ -10,8 +10,8 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.Properties;
 
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertTrue;
@@ -22,8 +22,6 @@ public class DependencyResolverMojoTest {
 
     @Rule
     public MojoRule rule = new MojoRule();
-    Properties props;
-    private File testTempDir;
     private File proxyRoot;
     private File proxyRef;
     private File target;
@@ -147,9 +145,8 @@ public class DependencyResolverMojoTest {
 
     @Before
     public void setUp() throws Exception {
-        testTempDir = new File("/apigee/Test");
-        //FileUtils.getTempDirectory();
-        System.out.println("testTempDir"+testTempDir);
+        File testTempDir = Paths.get("target", getClass().getSimpleName(), "apigee", "Test").toFile();
+        System.out.println("testTempDir:" + testTempDir);
         FileUtils.forceMkdir(testTempDir);
         FileUtils.copyDirectory(new File("src/test/resources"), testTempDir);
         System.out.println(testTempDir.getAbsolutePath());
